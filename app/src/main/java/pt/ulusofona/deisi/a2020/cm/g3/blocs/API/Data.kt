@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g3.blocs
+package pt.ulusofona.deisi.a2020.cm.g3.blocs.API
 
 class Data (var data: String, var data_dados: String, var confirmados: Int, var confirmados_norte: Int,
             var confirmados_centro: Int, var confirmados_lvt: Int, var confirmados_alentejo: Int,

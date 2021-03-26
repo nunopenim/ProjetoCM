@@ -5,5 +5,5 @@ class Data (var data: String, var data_dados: String, var confirmados: Int, var 
             var confirmados_algarve: Int, var confirmados_acores: Int, var confirmados_madeira: Int,
             var confirmados_novos: Int, var recuperados: Int, var obitos: Int, var internados: Int?,
             var internados_UCI: Int?){
-    //falta: taxa de sintomas, faixas etárias
+    //falta: taxa de sintomas, faixas etárias e métodos
 }

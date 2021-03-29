@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProjetoCM</string>
+    <string name="Dashboard">Dashboard</string>
+    <string name="lista_testes">Listagem de Testes</string>
+    <string name="vacinas">Estado da Vacinação</string>
+    <string name="contactos">Contactos</string>
+    <string name="open_burger">Abrir o Menu de navegação</string>
+    <string name="close_burger">Fechar o Menu de navegação</string>
 </resources>

@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        var toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.close_burger, R.string.open_burger)
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.close_burger, R.string.open_burger)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 

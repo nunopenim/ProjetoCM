@@ -6,4 +6,6 @@
     <string name="contactos">Contactos</string>
     <string name="open_burger">Abrir o Menu de navegação</string>
     <string name="close_burger">Fechar o Menu de navegação</string>
+    <string name="statistics">Estatísticas</string>
+    <string name="extra_info">Outras Informações</string>
 </resources>

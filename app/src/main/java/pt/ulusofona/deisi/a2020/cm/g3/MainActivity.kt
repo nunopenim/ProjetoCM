@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
@@ -39,6 +40,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.dashboard -> {
+                drawerLayout.closeDrawer(GravityCompat.START)
+                item.isChecked = false
+            }
+            R.id.contactos -> {
+                startActivity(Intent(this, ContactosActivity::class.java))
+            }
+            R.id.vacinas -> {
+                startActivity(Intent(this, VacinacaoActivity::class.java))
+            }
+            R.id.lista_testes -> {
+                startActivity(Intent(this, ListaTestesActivity::class.java))
+            }
+        }
         return true
     }
 

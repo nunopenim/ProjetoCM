@@ -20,7 +20,7 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         setContentView(R.layout.activity_lista_testes)
         drawerLayout = findViewById(R.id.drawer_layout_lt)
         navigationView = findViewById(R.id.nav_view_lt)
-        toolbar = findViewById(R.id.toolbar)
+        toolbar = findViewById(R.id.toolbar_lt)
         setSupportActionBar(toolbar)
         navigationView.bringToFront()
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.close_burger, R.string.open_burger)

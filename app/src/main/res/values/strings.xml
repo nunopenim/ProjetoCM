@@ -6,4 +6,7 @@
     <string name="contactos">Contactos</string>
     <string name="open_burger">Abrir o Menu de navegação</string>
     <string name="close_burger">Fechar o Menu de navegação</string>
+    <string name="title_activity_lista_testes">ListaTestesActivity</string>
+    <string name="title_activity_vacinacao">VacinacaoActivity</string>
+    <string name="title_activity_contactos">ContactosActivity</string>
 </resources>

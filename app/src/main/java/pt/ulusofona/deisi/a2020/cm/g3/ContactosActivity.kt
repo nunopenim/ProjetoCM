@@ -53,6 +53,9 @@ class ContactosActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             R.id.lista_testes -> {
                 startActivity(Intent(this, ListaTestesActivity::class.java))
             }
+            R.id.add_teste -> {
+                startActivity(Intent(this, RegistoTesteActivity::class.java))
+            }
         }
         return true
     }

@@ -9,10 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoCM">
-        <activity android:name=".ListaTestesActivity" android:label="@string/lista_testes"/>
-        <activity android:name=".VacinacaoActivity" android:label="@string/vacinas"/>
-        <activity android:name=".ContactosActivity" android:label="@string/contactos"/>
-        <activity android:name=".MainActivity" android:label="@string/Dashboard">
+        <activity android:name=".RegistoTesteActivity" android:label="@string/add_test"></activity>
+        <activity
+            android:name=".ListaTestesActivity"
+            android:label="@string/lista_testes" />
+        <activity
+            android:name=".VacinacaoActivity"
+            android:label="@string/vacinas" />
+        <activity
+            android:name=".ContactosActivity"
+            android:label="@string/contactos" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

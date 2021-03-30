@@ -53,6 +53,9 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
                 drawerLayout.closeDrawer(GravityCompat.START)
                 item.isChecked = false
             }
+            R.id.add_teste -> {
+                startActivity(Intent(this, RegistoTesteActivity::class.java))
+            }
         }
         return true
     }

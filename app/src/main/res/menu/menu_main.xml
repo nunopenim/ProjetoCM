@@ -5,17 +5,29 @@
             android:id="@+id/dashboard"
             android:title="@string/Dashboard"
             android:icon="@drawable/sample_droid" />
-        <item
-            android:id="@+id/lista_testes"
-            android:title="@string/lista_testes"
-            android:icon="@drawable/sample_droid" />
-        <item
-            android:id="@+id/vacinas"
-            android:title="@string/vacinas"
-            android:icon="@drawable/sample_droid" />
-        <item
-            android:id="@+id/contactos"
-            android:title="@string/contactos"
-            android:icon="@drawable/sample_droid" />
+        <item android:title="@string/statistics">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/lista_testes"
+                        android:title="@string/lista_testes"
+                        android:icon="@drawable/sample_droid" />
+                    <item
+                        android:id="@+id/vacinas"
+                        android:title="@string/vacinas"
+                        android:icon="@drawable/sample_droid" />
+                </group>
+            </menu>
+        </item>
+        <item android:title="@string/extra_info">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/contactos"
+                        android:title="@string/contactos"
+                        android:icon="@drawable/sample_droid" />
+                </group>
+            </menu>
+        </item>
     </group>
 </menu>

@@ -9,4 +9,14 @@
     <string name="statistics">Estatísticas</string>
     <string name="extra_info">Outras Informações</string>
     <string name="add_test">Registo de testes</string>
+    <string name="danger">A zona que você está é perigosa</string>
+    <string name="phone_contacts">Contactos telefónicos COVID19 </string>
+    <string name="sns_line_symnptoms">Linha SNS 24 para triagem de sintomas e esclarecimento de dúvidas sobre COVID-19.</string>
+    <string name="social_sec_line">Linha Segurança Social para esclarecimentos sobre assistência à família, subsidio de doença e quarentena.</string>
+    <string name="consular_gab">Gabinete de Emergência Consular</string>
+    <string name="digital_contacts">Contactos Digitais COVID19</string>
+    <string name="dgs_plat">Plataforma da DGS para esclarecimentos sobre a COVID-19.</string>
+    <string name="dgs_channel">Canal SNS 24 para esclarecimentos de dúvidas. Não utilizar para diagnóstico médico.</string>
+    <string name="covid_law">Legislação COVID19</string>
+    <string name="replublics_diary">Área do Diário da República Eletrónico dedicada à legislação relativa à pandemia</string>
 </resources>

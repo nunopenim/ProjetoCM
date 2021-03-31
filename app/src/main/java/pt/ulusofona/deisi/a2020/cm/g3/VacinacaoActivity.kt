@@ -9,11 +9,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Vacinas
 
 class VacinacaoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    val vacinas: Vacinas = Vacinas("2021-03-31", 1000, 250, 800, 200, 200, 50)// simulação da API
-
     lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
     lateinit var toolbar: Toolbar

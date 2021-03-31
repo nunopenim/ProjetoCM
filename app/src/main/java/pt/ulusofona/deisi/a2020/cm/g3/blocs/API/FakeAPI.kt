@@ -7,13 +7,11 @@ import kotlin.collections.ArrayList
 class FakeAPI {
     companion object {
         fun fakeTests() : ArrayList<Teste> {
-            val t1 = Teste("farmacia 1", true, Date(1617197288))
-            val t2 = Teste("farmacia 2", false, Date(1617097288))
-            val t3 = Teste("farmacia 3", false, Date(1617097288))
             val lt = ArrayList<Teste>()
-            lt.add(t1)
-            lt.add(t2)
-            lt.add(t3)
+            for (i in 0..20) {
+                val t1 = Teste("Farmácia $i", i%2==0, Date())
+                lt.add(t1)
+            }
             return lt
         }
 

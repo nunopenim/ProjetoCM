@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
       >
         <TextView
-            android:text="A zona que você está é perigosa"
+            android:text="@string/danger"
             android:textColor="#F6F6F6"
             android:textSize="18sp"
             android:textAlignment="center"
@@ -75,7 +75,7 @@
         android:textStyle="bold"
         android:maxLines="1"
         android:drawableLeft="@drawable/ic_baseline_local_phone_24"
-        android:text="Contactos telefónicos COVID19 "/>
+        android:text="@string/phone_contacts"/>
 
     <TextView
         android:id="@+id/text_view2"
@@ -101,7 +101,7 @@
         android:textSize="16sp"
         android:textColor="#131517"
         android:drawablePadding="55dp"
-        android:text="Linha SNS 24 para triagem de sintomas e esclarecimento de dúvidas sobre COVID-19."/>
+        android:text="@string/sns_line_symnptoms"/>
     <TextView
         android:id="@+id/text_view4"
         android:layout_width="match_parent"
@@ -126,7 +126,7 @@
         android:textSize="16sp"
         android:textColor="#131517"
         android:drawablePadding="55dp"
-        android:text="Linha Segurança Social para esclarecimentos sobre assistência à família, subsidio de doença e quarentena."/>
+        android:text="@string/social_sec_line"/>
     <TextView
         android:id="@+id/text_view6"
         android:layout_width="match_parent"
@@ -139,7 +139,7 @@
         android:drawablePadding="55dp"
         android:maxLines="1"
         android:textStyle="bold"
-        android:text="+351 217929714 e +351 961706472"/>
+        android:text="+351 217929714 / +351 961706472"/>
 
     <TextView
         android:id="@+id/text_view7"
@@ -150,7 +150,7 @@
         android:textSize="16sp"
         android:textColor="#131517"
         android:drawablePadding="55dp"
-        android:text="Gabinete de Emergência Consular"/>
+        android:text="@string/consular_gab"/>
 
     <TextView
         android:id="@+id/text_view8"
@@ -165,7 +165,7 @@
         android:drawablePadding="10dp"
         android:maxLines="1"
         android:drawableLeft="@drawable/ic_baseline_email_24"
-        android:text="Contactos Digitais COVID19"/>
+        android:text="@string/digital_contacts"/>
     <TextView
         android:id="@+id/text_view9"
         android:layout_width="match_parent"
@@ -190,7 +190,7 @@
         android:textSize="16sp"
         android:textColor="#131517"
         android:drawablePadding="55dp"
-        android:text="Plataforma da DGS para esclarecimentos sobre a COVID-19."/>
+        android:text="@string/dgs_plat"/>
     <TextView
         android:id="@+id/text_view11"
         android:layout_width="match_parent"
@@ -215,7 +215,7 @@
         android:textSize="16sp"
         android:textColor="#131517"
         android:drawablePadding="55dp"
-        android:text="Canal SNS 24 para esclarecimentos de dúvidas. Não utilizar para diagnóstico médico."/>
+        android:text="@string/dgs_channel"/>
     <TextView
         android:id="@+id/text_view13"
         android:layout_width="match_parent"
@@ -240,7 +240,7 @@
         android:textSize="16sp"
         android:textColor="#131517"
         android:drawablePadding="55dp"
-        android:text="Gabinete de Emergência Consular"/>
+        android:text="@string/consular_gab"/>
     <TextView
         android:id="@+id/text_view15"
         android:layout_width="match_parent"
@@ -253,7 +253,7 @@
         android:drawablePadding="55dp"
         android:maxLines="1"
         android:textStyle="bold"
-        android:text="Legislação COVID19"/>
+        android:text="@string/covid_law"/>
 
     <TextView
         android:id="@+id/text_view16"
@@ -265,7 +265,7 @@
         android:textSize="16sp"
         android:textColor="#131517"
         android:drawablePadding="55dp"
-        android:text="Área do Diário da República Eletrónico dedicada à legislação relativa à pandemia"/>
+        android:text="@string/replublics_diary"/>
     </TableLayout>
 
 

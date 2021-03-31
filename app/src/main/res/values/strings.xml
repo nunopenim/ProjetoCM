@@ -19,4 +19,6 @@
     <string name="dgs_channel">Canal SNS 24 para esclarecimentos de dúvidas. Não utilizar para diagnóstico médico.</string>
     <string name="covid_law">Legislação COVID19</string>
     <string name="replublics_diary">Área do Diário da República Eletrónico dedicada à legislação relativa à pandemia</string>
+    <string name="result_pos">Resultado: Positivo</string>
+    <string name="result_neg">Resultado: Negativo</string>
 </resources>

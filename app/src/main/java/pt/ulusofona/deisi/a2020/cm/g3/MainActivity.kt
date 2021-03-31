@@ -9,11 +9,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    val apiData = Data("2021-03-31", "2021-03-30", 800000, 400000, 100000,100000, 200000, 200000, 100000, 200000, 230, 700000, 10000, 10, 10)
-
     lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
     lateinit var toolbar: Toolbar

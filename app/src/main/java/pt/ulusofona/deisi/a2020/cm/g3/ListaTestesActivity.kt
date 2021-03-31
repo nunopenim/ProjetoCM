@@ -8,7 +8,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.FakeAPI
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.TesteAdapter
 
 class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var drawerLayout: DrawerLayout
@@ -27,6 +30,11 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navigationView.setNavigationItemSelectedListener(this)
+
+        //RecyclerView is comming, boys and girls
+        val testeAdapter  = TesteAdapter(FakeAPI.fakeTests())
+        val rv : RecyclerView = findViewById(R.id.recycler_testes)
+        rv.adapter = testeAdapter
     }
 
     override fun onBackPressed() {

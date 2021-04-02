@@ -13,7 +13,9 @@ import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
 
 class TesteAdapter (var testList: ArrayList<Teste>) : RecyclerView.Adapter<TesteAdapter.TesteViewHolder>() {
 
-    class TesteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    var onItemClick: ((Teste) -> Unit)? = null
+
+    inner class TesteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var number = itemView.findViewById<TextView>(R.id.test_number)
         var date = itemView.findViewById<TextView>(R.id.test_date)
@@ -28,23 +30,28 @@ class TesteAdapter (var testList: ArrayList<Teste>) : RecyclerView.Adapter<Teste
             else {
                 result.setText(R.string.result_neg)
             }
+            itemView.setOnClickListener {
+                onItemClick?.invoke(testList.get(adapterPosition))
+            }
         }
     }
 
-    fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int, type: Int) -> Unit): T {
-        itemView.setOnClickListener {
-            event.invoke(getAdapterPosition(), getItemViewType())
-        }
-        return this
-    }
+    //fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int, type: Int) -> Unit): T {
+    //    itemView.setOnClickListener {
+    //        event.invoke(getAdapterPosition(), getItemViewType())
+    //    }
+    //    return this
+    //}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TesteViewHolder {
-        val inflater = LayoutInflater.from(parent!!.getContext())
+        //val inflater = LayoutInflater.from(parent!!.getContext())
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.teste_item, parent, false)
-        return TesteViewHolder(view).listen {position, type ->
-            val item = testList.get(position)
-            //Meter aqui a página dos detalhes do teste!
-        }
+        return TesteViewHolder(view)
+
+        //.listen {position, type ->
+        //            val item = testList.get(position)
+        //            //Meter aqui a página dos detalhes do teste!
+        //        }
     }
 
     override fun getItemCount(): Int {

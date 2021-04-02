@@ -1,10 +1,13 @@
 package pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import pt.ulusofona.deisi.a2020.cm.g3.ContactosActivity
 import pt.ulusofona.deisi.a2020.cm.g3.R
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
 
@@ -28,9 +31,20 @@ class TesteAdapter (var testList: ArrayList<Teste>) : RecyclerView.Adapter<Teste
         }
     }
 
+    fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int, type: Int) -> Unit): T {
+        itemView.setOnClickListener {
+            event.invoke(getAdapterPosition(), getItemViewType())
+        }
+        return this
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TesteViewHolder {
+        val inflater = LayoutInflater.from(parent!!.getContext())
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.teste_item, parent, false)
-        return TesteViewHolder(view)
+        return TesteViewHolder(view).listen {position, type ->
+            val item = testList.get(position)
+            //Meter aqui a página dos detalhes do teste!
+        }
     }
 
     override fun getItemCount(): Int {

@@ -37,8 +37,15 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         val rv : RecyclerView = findViewById(R.id.recycler_testes)
         rv.adapter = testeAdapter
 
+        // https://stackoverflow.com/questions/3913592/start-an-activity-with-a-parameter :)
         testeAdapter.onItemClick = {teste ->
-            startActivity(Intent(this, TesteDetailActivity::class.java))
+            var intent = Intent(this, TesteDetailActivity::class.java)
+            var b = Bundle()
+            b.putString("local", teste.local)
+            b.putString("data", teste.data.toString())
+            b.putBoolean("resultado", teste.positivo)
+            intent.putExtras(b)
+            startActivity(intent)
         }
     }
 

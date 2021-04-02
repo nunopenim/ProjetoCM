@@ -22,4 +22,7 @@
     <string name="result_pos">Resultado: Positivo</string>
     <string name="result_neg">Resultado: Negativo</string>
     <string name="teste_detail">Detalhe do Teste</string>
+    <string name="local">Local: </string>
+    <string name="data">Data: </string>
+    <string name="exame">Foto do Teste</string>
 </resources>

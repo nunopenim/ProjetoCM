@@ -1,10 +1,11 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -18,6 +19,10 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_teste_detail)
+        val b = intent.extras
+        val local_intent = b?.getString("local")
+        val data_intent = b?.getString("data")
+        val resultado_intent = b?.getBoolean("resultado")
         drawerLayout = findViewById(R.id.drawer_layout_detail)
         navigationView = findViewById(R.id.nav_view_detail)
         toolbar = findViewById(R.id.toolbar_detail)
@@ -27,6 +32,21 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navigationView.setNavigationItemSelectedListener(this)
+        val local = findViewById<TextView>(R.id.teste_local)
+        val data = findViewById<TextView>(R.id.teste_data)
+        val resultado = findViewById<TextView>(R.id.teste_resultado)
+        val localstr = "${getString(R.string.local)} ${local_intent}"
+        val datastr = "${getString(R.string.data)} ${data_intent}"
+        var resultadostr = ""
+        if (resultado_intent!!) {
+            resultadostr = getString(R.string.result_pos)
+        }
+        else {
+            resultadostr = getString(R.string.result_neg)
+        }
+        local.text = localstr
+        data.text = datastr
+        resultado.text = resultadostr
     }
 
     override fun onBackPressed() {

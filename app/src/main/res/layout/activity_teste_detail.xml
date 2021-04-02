@@ -58,5 +58,58 @@
             android:layout_marginRight="3dp"
             android:layout_marginTop="55dp"
             android:background="#D9001B"/>
+
+        <!-- Ter atenção ao android:src, que de futuro deverá ser dinamico -->
+
+        <ImageView
+            android:id="@+id/teste_foto"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/teste_sample"
+            android:contentDescription="@string/exame" />
+
+        <TextView
+            android:id="@+id/teste_local"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/local"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/teste_data"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/data"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/teste_resultado"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/result_neg"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"/>
+
     </TableLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

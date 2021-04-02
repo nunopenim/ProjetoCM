@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoCM">
-        <activity android:name=".TesteDetailActivity"></activity>
+        <activity
+            android:name=".TesteDetailActivity"
+            android:label="@string/teste_detail"/>
         <activity
             android:name=".RegistoTesteActivity"
             android:label="@string/add_test" />

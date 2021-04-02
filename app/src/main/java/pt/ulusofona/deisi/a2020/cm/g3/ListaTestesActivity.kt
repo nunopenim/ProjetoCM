@@ -38,7 +38,7 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         rv.adapter = testeAdapter
 
         testeAdapter.onItemClick = {teste ->
-            // chamamos página de detalhe do teste
+            startActivity(Intent(this, TesteDetailActivity::class.java))
         }
     }
 

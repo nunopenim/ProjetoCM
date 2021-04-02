@@ -17,7 +17,7 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registo_teste)
+        setContentView(R.layout.activity_teste_detail)
         drawerLayout = findViewById(R.id.drawer_layout_detail)
         navigationView = findViewById(R.id.nav_view_detail)
         toolbar = findViewById(R.id.toolbar_detail)

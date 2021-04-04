@@ -50,7 +50,7 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             var intent = Intent(this, TesteDetailActivity::class.java)
             var b = Bundle()
             b.putString("local", teste.local)
-            b.putString("data", teste.data.toString())
+            b.putString("data", teste.stringMyDate())
             b.putBoolean("resultado", teste.positivo)
             intent.putExtras(b)
             startActivity(intent)

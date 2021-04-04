@@ -23,7 +23,7 @@ class TesteAdapter (var testList: ArrayList<Teste>) : RecyclerView.Adapter<Teste
 
         fun bind(teste: Teste) {
             number.setText(teste.local)
-            date.setText(teste.data.toString())
+            date.setText(teste.stringMyDate())
             if(teste.positivo) {
                 result.setText(R.string.result_pos)
             }

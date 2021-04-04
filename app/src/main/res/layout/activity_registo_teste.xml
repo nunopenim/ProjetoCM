@@ -59,5 +59,107 @@
             android:layout_marginRight="3dp"
             android:layout_marginTop="55dp"
             android:background="#D9001B"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="70dp"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/local"
+                android:inputType="text"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:hint="@string/test_place"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:background="#ffffff"
+                android:text="@string/test_place" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="70dp"
+            >
+            <!-- https://stackoverflow.com/questions/14933330/datepicker-how-to-popup-datepicker-when-click-on-edittext -->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:id="@+id/data"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/test_date"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:background="#ffffff"
+                android:text="@string/test_date" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:background="#ffffff"
+            android:text="@string/test_result" />
+
+        <Spinner
+            android:id="@+id/result_spinner"
+            android:layout_width="match_parent"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="70dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:text="@string/foto"
+            android:id="@+id/take_foto"
+            app:icon="@drawable/tirar_foto"
+            app:iconTint="@color/white"
+            app:iconGravity="textStart"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:text="@string/gravar"
+            android:id="@+id/regist_test"
+            app:icon="@drawable/gravar"
+            app:iconTint="@color/white"
+            app:iconGravity="textStart"
+            />
+
     </TableLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
+

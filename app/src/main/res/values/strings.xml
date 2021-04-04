@@ -26,4 +26,13 @@
     <string name="data">Data: </string>
     <string name="exame">Foto do Teste</string>
     <string name="empty_list">A lista está vazia!</string>
+    <string name="test_place">Local do teste</string>
+    <string name="test_date">Data do teste</string>
+    <string name="test_result">Resultado do teste</string>
+    <string name="pos">Positivo</string>
+    <string name="neg">Negativo</string>
+    <string name="foto">Tirar fotografia</string>
+    <string name="gravar">Registar Teste</string>
+    <string name="invalid_local">O local inserido é inválido!</string>
+    <string name="invalid_data">A data inserida é inválida!</string>
 </resources>

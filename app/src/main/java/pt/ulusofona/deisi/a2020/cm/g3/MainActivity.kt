@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
 
         // Debug Only
-        InfoSingleton.initTestListDebug()
+        //InfoSingleton.initTestListDebug()
     }
 
     override fun onBackPressed() {

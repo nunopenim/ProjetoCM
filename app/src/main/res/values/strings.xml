@@ -25,4 +25,5 @@
     <string name="local">Local: </string>
     <string name="data">Data: </string>
     <string name="exame">Foto do Teste</string>
+    <string name="empty_list">A lista está vazia!</string>
 </resources>

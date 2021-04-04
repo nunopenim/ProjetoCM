@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -36,6 +38,11 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         //RecyclerView is comming, boys and girls
         val testeAdapter  = TesteAdapter(InfoSingleton.testList)
         val rv : RecyclerView = findViewById(R.id.recycler_testes)
+        val emptyList : TextView = findViewById(R.id.emptyList)
+        if (InfoSingleton.testList.size != 0) {
+            rv.visibility = View.VISIBLE
+            emptyList.visibility = View.GONE
+        }
         rv.adapter = testeAdapter
 
         // https://stackoverflow.com/questions/3913592/start-an-activity-with-a-parameter :)

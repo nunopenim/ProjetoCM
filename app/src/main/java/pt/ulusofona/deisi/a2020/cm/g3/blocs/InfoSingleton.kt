@@ -1,6 +1,5 @@
 package pt.ulusofona.deisi.a2020.cm.g3.blocs
 
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.FakeAPI
 import java.util.*
 import kotlin.collections.ArrayList
 

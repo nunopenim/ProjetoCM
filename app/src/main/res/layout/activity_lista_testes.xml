@@ -71,7 +71,7 @@
             />
 
         <TextView
-            android:text="A lista está vazia"
+            android:text="@string/empty_list"
             android:id="@+id/emptyList"
             android:textColor="@android:color/darker_gray"
             android:layout_marginTop="20dp"

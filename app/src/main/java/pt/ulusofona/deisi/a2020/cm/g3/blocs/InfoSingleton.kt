@@ -1,6 +1,8 @@
 package pt.ulusofona.deisi.a2020.cm.g3.blocs
 
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.FakeAPI
+import java.util.*
+import kotlin.collections.ArrayList
 
 object InfoSingleton {
     var testList = ArrayList<Teste>()
@@ -14,6 +16,12 @@ object InfoSingleton {
     }
 
     fun initTestListDebug() {
-        testList = FakeAPI.fakeTests()
+        val lt = ArrayList<Teste>()
+        for (i in 0..20) {
+            val t1 = Teste("Farmácia $i", i%2==0, Date())
+            lt.add(t1)
+        }
+        testList = lt
     }
+
 }

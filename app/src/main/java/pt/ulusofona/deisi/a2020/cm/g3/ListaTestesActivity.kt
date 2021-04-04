@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.FakeAPI
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.TesteAdapter
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.InfoSingleton
 
 class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var drawerLayout: DrawerLayout
@@ -33,7 +34,7 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         navigationView.setNavigationItemSelectedListener(this)
 
         //RecyclerView is comming, boys and girls
-        val testeAdapter  = TesteAdapter(FakeAPI.fakeTests())
+        val testeAdapter  = TesteAdapter(InfoSingleton.testList)
         val rv : RecyclerView = findViewById(R.id.recycler_testes)
         rv.adapter = testeAdapter
 

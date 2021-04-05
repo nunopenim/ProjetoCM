@@ -59,5 +59,141 @@
             android:layout_marginRight="3dp"
             android:layout_marginTop="55dp"
             android:background="#D9001B"/>
+
+
+            <GridLayout
+                android:columnCount="2"
+                android:rowCount="3"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp"
+                    >
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="88dp"
+                            android:layout_height="95dp"
+                            android:src="@drawable/lavar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="12dp"
+                            android:maxLines="2"
+                            android:text="Confirmados:\n    823.335"
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp"
+                    >
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:src="@drawable/sabonete"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp"
+                            android:text="Recuperados:\n    823.335"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp"
+                    >
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:src="@drawable/menina"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp"
+                            android:text= "Óbitos:\n 16.879"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp"
+                    >
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:src="@drawable/cuidados"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp"
+                            android:text= "Internados:\n      517"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+
+
     </TableLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

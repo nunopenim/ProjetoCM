@@ -6,52 +6,74 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="397dp"
         android:layout_height="wrap_content"
-        android:background="@color/teal_700"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp">
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="49dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_baseline_feed_24"
+
+            />
 
         <TextView
             android:id="@+id/test_number"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:text="Place"
-            android:gravity="top"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="10dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/image_view"
+            android:gravity="top"
+            android:text="Place"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="normal" />
 
         <TextView
             android:id="@+id/test_date"
-            android:layout_width="match_parent"
+            android:layout_width="202dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:text="Date"
-            android:gravity="right"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginTop="48dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/test_number"
+            android:gravity="right"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/test_result"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:layout_below="@id/test_number"
-            android:text="Result: "
-            android:gravity="top"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="12dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/image_view"
+            android:gravity="top"
+            android:text="Result: "
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/image_view2"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="320dp"
+            android:layout_toEndOf="@+id/image_view"
+            android:src="@drawable/ic_baseline_more_vert_24" />
 
     </RelativeLayout>
 

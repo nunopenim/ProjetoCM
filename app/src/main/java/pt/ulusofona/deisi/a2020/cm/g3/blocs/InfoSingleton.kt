@@ -17,7 +17,7 @@ object InfoSingleton {
     fun initTestListDebug() {
         val lt = ArrayList<Teste>()
         for (i in 0..20) {
-            val t1 = Teste("Farmácia $i", i%2==0, Date())
+            val t1 = Teste("Farmácia $i", i%2==0, Date(), null)
             lt.add(t1)
         }
         testList = lt

@@ -47,11 +47,16 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
 
         // https://stackoverflow.com/questions/3913592/start-an-activity-with-a-parameter :)
         testeAdapter.onItemClick = {teste ->
-            var intent = Intent(this, TesteDetailActivity::class.java)
-            var b = Bundle()
+            val intent = Intent(this, TesteDetailActivity::class.java)
+            val b = Bundle()
+            var id = 0
+            if (teste.photo != null) {
+                id = teste.photo!! //para entrar aqui será doferente de null
+            }
             b.putString("local", teste.local)
             b.putString("data", teste.stringMyDate())
             b.putBoolean("resultado", teste.positivo)
+            b.putInt("photo", id)
             intent.putExtras(b)
             startActivity(intent)
         }

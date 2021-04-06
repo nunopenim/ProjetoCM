@@ -194,6 +194,11 @@
 
         </GridLayout>
 
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
 
     </TableLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

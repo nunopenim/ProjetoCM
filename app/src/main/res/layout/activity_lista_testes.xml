@@ -60,15 +60,41 @@
             android:layout_marginTop="55dp"
             android:background="#D9001B"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_testes"
-            android:textAlignment="textStart"
-            android:background="#F5F5F5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            />
+        <RelativeLayout
+            android:id="@+id/relative_recycler"
+            android:visibility="gone">
+            <Button
+                android:layout_alignParentEnd="true"
+                android:id="@+id/decrescente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/decrescente"/>
+            <Button
+                android:layout_toStartOf="@+id/decrescente"
+                android:id="@+id/crescente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crescente"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@string/ordenacao"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_below="@id/crescente"
+                android:id="@+id/recycler_testes"
+                android:textAlignment="textStart"
+                android:background="#F5F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                />
+        </RelativeLayout>
 
         <TextView
             android:text="@string/empty_list"

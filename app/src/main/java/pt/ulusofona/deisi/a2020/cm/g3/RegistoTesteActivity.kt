@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
@@ -28,7 +29,10 @@ class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationIte
     lateinit var dataTeste: TextView
     lateinit var dropdown: Spinner
     lateinit var saveButton: MaterialButton
+    lateinit var photoButton: MaterialButton
+    lateinit var takenPhotoMessage: TextView
 
+    var hasPhoto = false
     lateinit var options: Array<String>
 
     val mcurrentTime = Calendar.getInstance()
@@ -49,6 +53,8 @@ class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         dataTeste = findViewById(R.id.data)
         dropdown = findViewById(R.id.result_spinner)
         saveButton = findViewById(R.id.regist_test)
+        photoButton = findViewById(R.id.take_foto)
+        takenPhotoMessage = findViewById(R.id.foto_tirada)
         setSupportActionBar(toolbar)
         navigationView.bringToFront()
         val toggle = ActionBarDrawerToggle(
@@ -74,6 +80,10 @@ class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         val adapter: ArrayAdapter<String> =
             ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, options)
         dropdown.adapter = adapter
+        photoButton.setOnClickListener {
+            hasPhoto = true
+            takenPhotoMessage.visibility = View.VISIBLE
+        }
         saveButton.setOnClickListener {
             var erro = false
             if (local.text.toString() == "") {
@@ -95,7 +105,10 @@ class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationIte
                 val timeStr = String.format("%04d-%02d-%02d", y, m, d)
                 val formatter = SimpleDateFormat("yyyy-MM-dd")
                 val date = formatter.parse(timeStr).time
-                val teste = Teste(local.text.toString(), resultado, Date(date))
+                var teste = Teste(local.text.toString(), resultado, Date(date), null)
+                if (hasPhoto) {
+                    teste = Teste(local.text.toString(), resultado, Date(date), R.drawable.teste_sample)
+                }
                 InfoSingleton.addTestToList(teste)
                 startActivity(Intent(this, ListaTestesActivity::class.java))
             }

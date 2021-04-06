@@ -9,9 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoCM">
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".PhotoViewActivity"
-            android:label="@string/test_foto"/>
+            android:label="@string/test_foto" />
         <activity
             android:name=".TesteDetailActivity"
             android:label="@string/teste_detail" />
@@ -30,11 +37,6 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/Dashboard">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

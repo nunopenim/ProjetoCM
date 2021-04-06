@@ -36,13 +36,6 @@ class TesteAdapter (var testList: ArrayList<Teste>) : RecyclerView.Adapter<Teste
         }
     }
 
-    //fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int, type: Int) -> Unit): T {
-    //    itemView.setOnClickListener {
-    //        event.invoke(getAdapterPosition(), getItemViewType())
-    //    }
-    //    return this
-    //}
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TesteViewHolder {
         //val inflater = LayoutInflater.from(parent!!.getContext())
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.teste_item, parent, false)

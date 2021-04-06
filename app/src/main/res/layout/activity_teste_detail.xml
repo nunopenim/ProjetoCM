@@ -72,7 +72,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/teste_empty"
-            android:contentDescription="@string/exame" />
+            android:contentDescription="@string/exame"/>
 
         <TextView
             android:id="@+id/teste_local"

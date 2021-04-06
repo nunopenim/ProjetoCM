@@ -20,5 +20,39 @@ class Data (var data: String, var data_dados: String, var confirmados: Int, var 
         return arrayOf(confirmados_0_9m, confirmados_10_19m, confirmados_20_29m, confirmados_30_39m, confirmados_40_49m, confirmados_50_59m, confirmados_60_69m, confirmados_70_79m, confirmados_80m)
     }
 
+    fun confirmados_general() : Array<Int> {
+        return arrayOf(
+            confirmados_female()[0]!! + confirmados_male()[0]!!,
+            confirmados_female()[1]!! + confirmados_male()[1]!!,
+            confirmados_female()[2]!! + confirmados_male()[2]!!,
+            confirmados_female()[3]!! + confirmados_male()[3]!!,
+            confirmados_female()[4]!! + confirmados_male()[4]!!,
+            confirmados_female()[5]!! + confirmados_male()[5]!!,
+            confirmados_female()[6]!! + confirmados_male()[6]!!,
+            confirmados_female()[7]!! + confirmados_male()[7]!!,
+            confirmados_female()[8]!! + confirmados_male()[8]!!
+        )
+    }
+
+    fun getMaxConfirmadosGeneral() : Int {
+        var max = 0
+        for (i in confirmados_general()) {
+            if (i > max) {
+                max = i
+            }
+        }
+        return max
+    }
+
+    fun getMaxConfirmados() : Int {
+        var max = 0
+        for (i in confirmados_female() + confirmados_male()) {
+            if (i != null && i > max) {
+                max = i
+            }
+        }
+        return max
+    }
+
     //falta: taxa de sintomas, métodos
 }

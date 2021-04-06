@@ -35,4 +35,5 @@
     <string name="gravar">Registar Teste</string>
     <string name="invalid_local">O local inserido é inválido!</string>
     <string name="invalid_data">A data inserida é inválida!</string>
+    <string name="taken_photo">Fotografia tirada e adicionada com sucesso</string>
 </resources>

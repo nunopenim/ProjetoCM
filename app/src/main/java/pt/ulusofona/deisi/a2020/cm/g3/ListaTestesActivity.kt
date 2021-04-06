@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
@@ -21,6 +23,8 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
     lateinit var toolbar: Toolbar
+    lateinit var crescente: Button
+    lateinit var decrescente: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,13 +38,16 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navigationView.setNavigationItemSelectedListener(this)
+        crescente = findViewById(R.id.crescente)
+        decrescente = findViewById(R.id.decrescente)
 
         //RecyclerView is comming, boys and girls
         val testeAdapter  = TesteAdapter(InfoSingleton.testList)
         val rv : RecyclerView = findViewById(R.id.recycler_testes)
+        val relative_rv : RelativeLayout = findViewById(R.id.relative_recycler)
         val emptyList : TextView = findViewById(R.id.emptyList)
         if (InfoSingleton.testList.size != 0) {
-            rv.visibility = View.VISIBLE
+            relative_rv.visibility = View.VISIBLE
             emptyList.visibility = View.GONE
         }
         rv.adapter = testeAdapter
@@ -59,6 +66,14 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             b.putInt("photo", id)
             intent.putExtras(b)
             startActivity(intent)
+        }
+        crescente.setOnClickListener {
+            testeAdapter.testList = InfoSingleton.testList.sortedBy { it.data.time }
+            testeAdapter.notifyDataSetChanged()
+        }
+        decrescente.setOnClickListener {
+            testeAdapter.testList = InfoSingleton.testList.sortedByDescending { it.data.time }
+            testeAdapter.notifyDataSetChanged()
         }
     }
 

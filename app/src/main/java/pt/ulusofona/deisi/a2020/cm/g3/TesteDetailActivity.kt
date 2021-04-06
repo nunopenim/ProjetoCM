@@ -3,6 +3,7 @@ package pt.ulusofona.deisi.a2020.cm.g3
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,7 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
     lateinit var toolbar: Toolbar
+    lateinit var foto: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +25,14 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         val local_intent = b?.getString("local")
         val data_intent = b?.getString("data")
         val resultado_intent = b?.getBoolean("resultado")
+        val foto_id = b?.getInt("photo")
         drawerLayout = findViewById(R.id.drawer_layout_detail)
         navigationView = findViewById(R.id.nav_view_detail)
         toolbar = findViewById(R.id.toolbar_detail)
+        foto = findViewById(R.id.teste_foto)
+        if (foto_id != null && foto_id != 0) {
+            foto.setImageResource(foto_id)
+        }
         setSupportActionBar(toolbar)
         navigationView.bringToFront()
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.close_burger, R.string.open_burger)

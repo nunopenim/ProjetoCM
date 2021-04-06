@@ -11,7 +11,7 @@ import pt.ulusofona.deisi.a2020.cm.g3.ContactosActivity
 import pt.ulusofona.deisi.a2020.cm.g3.R
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
 
-class TesteAdapter (var testList: ArrayList<Teste>) : RecyclerView.Adapter<TesteAdapter.TesteViewHolder>() {
+class TesteAdapter (var testList: List<Teste>) : RecyclerView.Adapter<TesteAdapter.TesteViewHolder>() {
 
     var onItemClick: ((Teste) -> Unit)? = null
 

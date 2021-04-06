@@ -5,6 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -33,6 +34,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView = findViewById(R.id.nav_view)
         toolbar = findViewById(R.id.toolbar)
 
+        //cards
+        val confirmados = findViewById<TextView>(R.id.confirmados)
+        val recuperados = findViewById<TextView>(R.id.recuperados)
+        val internados = findViewById<TextView>(R.id.internados)
+        val obitos = findViewById<TextView>(R.id.obitos)
+        val confirmadosstr = getString(R.string.confirmados) + data.confirmados
+        val recuperadosstr = getString(R.string.recuperados) + data.recuperados
+        val internadosstr = getString(R.string.internados) + data.internados
+        val obitosstr = getString(R.string.obitos) + data.obitos
+        confirmados.text = confirmadosstr
+        recuperados.text = recuperadosstr
+        internados.text = internadosstr
+        obitos.text = obitosstr
+
+        //chart stuff
         chart = findViewById(R.id.chart1)
         val barData0to9 = BarDataSet(arrayListOf(BarEntry(0f, data.confirmados_general()[0].toFloat())), "0-9")
         val barData10to19 = BarDataSet(arrayListOf(BarEntry(1.25f, data.confirmados_general()[1].toFloat())), "10-19")

@@ -17,6 +17,7 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     lateinit var navigationView: NavigationView
     lateinit var toolbar: Toolbar
     lateinit var foto: ImageView
+    var hasPhoto = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,7 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         foto = findViewById(R.id.teste_foto)
         if (foto_id != null && foto_id != 0) {
             foto.setImageResource(foto_id)
+            hasPhoto = true
         }
         setSupportActionBar(toolbar)
         navigationView.bringToFront()
@@ -54,6 +56,15 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         local.text = localstr
         data.text = datastr
         resultado.text = resultadostr
+        if (hasPhoto) {
+            foto.setOnClickListener {
+                val intent = Intent(this, PhotoViewActivity::class.java)
+                val b = Bundle()
+                b.putInt("photo", foto_id!!)
+                intent.putExtras(b)
+                startActivity(intent)
+            }
+        }
     }
 
     override fun onBackPressed() {

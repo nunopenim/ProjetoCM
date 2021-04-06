@@ -64,6 +64,21 @@
             android:layout_marginTop="55dp"
             android:background="#D9001B"/>
 
+        <TextView
+            android:text="@string/taken_photo"
+            android:textColor="#F6F6F6"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:id="@+id/foto_tirada"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/holo_blue_dark"/>
+
         <ImageView
             android:layout_width="20dp"
             android:layout_height="91dp"
@@ -173,7 +188,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"

@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoCM">
         <activity
+            android:name=".PhotoViewActivity"
+            android:label="@string/test_foto"/>
+        <activity
             android:name=".TesteDetailActivity"
-            android:label="@string/teste_detail"/>
+            android:label="@string/teste_detail" />
         <activity
             android:name=".RegistoTesteActivity"
             android:label="@string/add_test" />

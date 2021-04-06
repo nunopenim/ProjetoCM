@@ -37,4 +37,9 @@
     <string name="invalid_data">A data inserida é inválida!</string>
     <string name="taken_photo">Fotografia tirada e adicionada com sucesso</string>
     <string name="test_foto">Fotografia do Teste</string>
+    <string name="confirmados">Confirmados:\n</string>
+    <string name="recuperados">Recuperados:\n</string>
+    <string name="obitos">Óbitos:\n</string>
+    <string name="internados">Internados:\n</string>
+    <string name="age_grafic">Gráfico de barras das Idades</string>
 </resources>

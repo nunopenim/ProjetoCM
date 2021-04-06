@@ -12,17 +12,17 @@
     <ScrollView
         android:id="@+id/scrview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="#FFFFFF">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar_photoview"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="#00008577"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
@@ -31,26 +31,17 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:navigationIcon="@drawable/backarrow" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.github.chrisbanes.photoview.PhotoView
+                android:layout_below="@+id/toolbar_photoview"
+                android:id="@+id/teste_foto_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/exame"
+                android:src="@drawable/teste_sample" />
+
+        </RelativeLayout>
     </ScrollView>
 
-    <TableLayout android:id="@+id/TableLayout01_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/teste_foto_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:clickable="true"
-            android:contentDescription="@string/exame"
-            android:focusable="true"
-            android:src="@drawable/teste_sample" />
-
-    </TableLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

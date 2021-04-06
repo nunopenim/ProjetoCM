@@ -1,16 +1,19 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.ScaleGestureDetector
+import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener
 import android.widget.ImageView
 import android.widget.ScrollView
-import android.widget.ToggleButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.drawerlayout.widget.DrawerLayout
+import com.github.chrisbanes.photoview.PhotoView
+
 
 class PhotoViewActivity : AppCompatActivity() {
     lateinit var toolbar: Toolbar
-    lateinit var photo: ImageView
+    lateinit var photo: PhotoView
     lateinit var scrollView: ScrollView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +27,5 @@ class PhotoViewActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener {onBackPressed()}
         photo.setImageResource(foto_id!!)
-        scrollView.bringToFront()
     }
 }

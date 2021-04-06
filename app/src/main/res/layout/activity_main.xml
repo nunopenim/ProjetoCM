@@ -63,7 +63,7 @@
 
             <GridLayout
                 android:columnCount="2"
-                android:rowCount="3"
+                android:rowCount="2"
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false"
                 android:layout_width="match_parent"
@@ -86,18 +86,20 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:layout_width="88dp"
-                            android:layout_height="95dp"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
                             android:src="@drawable/lavar" />
 
                         <TextView
+                            android:id="@+id/confirmados"
                             android:layout_width="wrap_content"
                             android:layout_height="56dp"
                             android:layout_marginTop="12dp"
                             android:maxLines="2"
-                            android:text="Confirmados:\n    823.335"
+                            android:textAlignment="center"
+                            android:text="@string/confirmados"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
@@ -117,15 +119,17 @@
                         android:layout_height="match_parent">
                         <ImageView
                             android:src="@drawable/sabonete"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
                             />
 
                         <TextView
+                            android:id="@+id/recuperados"
                             android:layout_marginTop="12dp"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp"
-                            android:text="Recuperados:\n    823.335"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:text="@string/recuperados"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                     </LinearLayout>
@@ -152,10 +156,12 @@
                             />
 
                         <TextView
+                            android:id="@+id/obitos"
                             android:layout_marginTop="12dp"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp"
-                            android:text= "Óbitos:\n 16.879"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:text= "@string/obitos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                     </LinearLayout>
@@ -182,10 +188,12 @@
                             />
 
                         <TextView
+                            android:id="@+id/internados"
                             android:layout_marginTop="12dp"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp"
-                            android:text= "Internados:\n      517"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:text= "@string/internados"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                     </LinearLayout>
@@ -193,7 +201,11 @@
 
 
         </GridLayout>
-
+        <TextView
+            android:text="@string/age_grafic"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"/>
         <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/chart1"
             android:layout_width="match_parent"

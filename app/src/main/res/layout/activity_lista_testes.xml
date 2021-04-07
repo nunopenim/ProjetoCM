@@ -9,7 +9,6 @@
     android:fitsSystemWindows="true"
     tools:context=".ListaTestesActivity"
     tools:openDrawer="start">
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view_lt"
         android:layout_gravity="start"
@@ -17,16 +16,13 @@
         android:layout_width="wrap_content"
         app:headerLayout="@layout/header"
         app:menu="@menu/menu_main"/>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FFFFFF">
-
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar_lt"
                 android:layout_width="0dp"
@@ -40,7 +36,6 @@
                 app:navigationIcon="@drawable/menu"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
     <TableLayout android:id="@+id/TableLayout01"
         android:layout_width="wrap_content"
@@ -50,7 +45,6 @@
             android:textColor="#F6F6F6"
             android:textSize="18sp"
             android:textAlignment="center"
-
             android:id="@+id/TextView01"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -59,7 +53,6 @@
             android:layout_marginRight="3dp"
             android:layout_marginTop="55dp"
             android:background="#D9001B"/>
-
         <RelativeLayout
             android:id="@+id/relative_recycler"
             android:visibility="gone">
@@ -67,14 +60,19 @@
                 android:layout_alignParentEnd="true"
                 android:id="@+id/decrescente"
                 android:layout_width="wrap_content"
+                android:backgroundTint="#4682B4"
+                android:layout_marginStart="2dp"
                 android:layout_height="wrap_content"
                 android:text="@string/decrescente"/>
             <Button
                 android:layout_toStartOf="@+id/decrescente"
                 android:id="@+id/crescente"
                 android:layout_width="wrap_content"
+                android:backgroundTint="#4682B4"
+
                 android:layout_height="wrap_content"
                 android:text="@string/crescente"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,7 +93,6 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 />
         </RelativeLayout>
-
         <TextView
             android:text="@string/empty_list"
             android:id="@+id/emptyList"
@@ -105,11 +102,5 @@
             android:textAlignment="center"
             android:visibility="visible"
             />
-
-
     </TableLayout>
-
-
-
-
 </androidx.drawerlayout.widget.DrawerLayout>

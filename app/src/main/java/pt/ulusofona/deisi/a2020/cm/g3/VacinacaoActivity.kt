@@ -24,7 +24,6 @@ class VacinacaoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     lateinit var chart: PieChart
 
     var vacinasData = FakeAPI.fakeVaccines()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vacinacao)
@@ -37,7 +36,6 @@ class VacinacaoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navigationView.setNavigationItemSelectedListener(this)
-
         //chart
         chart = findViewById(R.id.pieChart)
         val pieEntries: ArrayList<PieEntry> = ArrayList()
@@ -46,23 +44,22 @@ class VacinacaoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         typeAmountMap["Primeiras Doses"] = vacinasData.doses1_novas!!
         typeAmountMap["Segundas Doses"] = vacinasData.doses2_novas!!
         val colors: ArrayList<Int> = ArrayList()
-        colors.add(Color.BLUE)
-        colors.add(Color.RED)
+        colors.add(Color.parseColor("#66CDAA"))
+        colors.add(Color.parseColor("#4682B4"))
         for (type in typeAmountMap.keys) {
             pieEntries.add(PieEntry(typeAmountMap[type]!!.toFloat(), type))
         }
         val pieDataSet = PieDataSet(pieEntries, label)
-        pieDataSet.valueTextSize = 16f
+        pieDataSet.valueTextSize = 15f
         pieDataSet.valueTextColor = Color.WHITE
         pieDataSet.colors = colors
         val pieData = PieData(pieDataSet)
         pieData.setDrawValues(true)
-        chart.setEntryLabelTextSize(14f)
+        chart.setEntryLabelTextSize(15f)
         chart.legend.isEnabled = false
         chart.description.text = ""
         chart.data = pieData
     }
-
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
@@ -71,7 +68,6 @@ class VacinacaoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             super.onBackPressed()
         }
     }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.dashboard -> {

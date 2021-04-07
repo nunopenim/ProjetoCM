@@ -12,13 +12,20 @@
     <ScrollView
         android:id="@+id/scrview"
         android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF">
-
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="210dp"
+                android:layout_marginTop="14dp"
+                android:src="@drawable/zoom" />
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar_photoview"
                 android:layout_width="match_parent"
@@ -35,9 +42,12 @@
                 android:layout_below="@+id/toolbar_photoview"
                 android:id="@+id/teste_foto_view"
                 android:layout_width="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/exame"
                 android:src="@drawable/teste_sample" />
+
 
         </RelativeLayout>
     </ScrollView>

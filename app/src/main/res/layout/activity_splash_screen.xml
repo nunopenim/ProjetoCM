@@ -6,14 +6,25 @@
     android:layout_gravity="center"
     android:layout_height="wrap_content"
     tools:context=".SplashScreenActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
         android:gravity="center"
-        android:textSize="26sp"
-        android:text="Splashscreen ué"
-        />
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:src="@drawable/mao"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            />
+        <TextView
+            android:id="@+id/internados"
+            android:layout_marginTop="12dp"
+            android:textColor="#6f6f6f"
+            android:textSize="56sp"
+            android:textAlignment="center"
+            android:text= "@string/staysafe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 </LinearLayout>

@@ -87,7 +87,6 @@
             android:layout_marginEnd="8dp"
             android:src="@drawable/smartphone"
             />
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_marginTop="40dp"
@@ -168,7 +167,6 @@
             android:layout_height="70dp"
             android:background="@drawable/border"
             android:spinnerMode="dropdown"/>
-
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_marginTop="30dp"

@@ -41,8 +41,10 @@
     <string name="recuperados">Recuperados:\n</string>
     <string name="obitos">Óbitos:\n</string>
     <string name="internados">Internados:\n</string>
-    <string name="age_grafic">Gráfico de barras das Idades</string>
+    <string name="age_grafic">Gráfico de barras das idades</string>
     <string name="crescente">Crescente</string>
     <string name="decrescente">Decrescente</string>
     <string name="ordenacao">Ordenação: </string>
+    <string name="staysafe">StaySafe</string>
+    <string name="totalvacinas">Total de doses de vacinas administradas:</string>
 </resources>

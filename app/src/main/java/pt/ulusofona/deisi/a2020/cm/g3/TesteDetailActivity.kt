@@ -18,7 +18,6 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     lateinit var toolbar: Toolbar
     lateinit var foto: ImageView
     var hasPhoto = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_teste_detail)
@@ -66,7 +65,6 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             }
         }
     }
-
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
@@ -75,7 +73,6 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             super.onBackPressed()
         }
     }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.dashboard -> {

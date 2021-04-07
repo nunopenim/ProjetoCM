@@ -46,7 +46,9 @@
     <string name="decrescente">Decrescent</string>
     <string name="ordenacao">Order: </string>
     <string name="staysafe">StaySafe</string>
-    <string name="totalvacinas">Total of vaccine dosages administered:</string>
+    <string name="totalvacinas">Total of vaccine dosages administered:\n</string>
     <string name="ordenado_crescente">The list was ordered by crescent value of dates</string>
     <string name="ordenado_decrescente">The list was ordered by decrescent value of dates</string>
+    <string name="first_doses">1st doses</string>
+    <string name="second_doses">2nd doses</string>
 </resources>

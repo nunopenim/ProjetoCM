@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -22,14 +23,19 @@ class VacinacaoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     lateinit var navigationView: NavigationView
     lateinit var toolbar: Toolbar
     lateinit var chart: PieChart
+    lateinit var card: TextView
 
     var vacinasData = FakeAPI.fakeVaccines()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vacinacao)
         drawerLayout = findViewById(R.id.drawer_layout_vacinacao)
         navigationView = findViewById(R.id.nav_view_vacinacao)
         toolbar = findViewById(R.id.toolbar_vacinacao)
+        card = findViewById(R.id.confirmados)
+        val cardstr = getString(R.string.totalvacinas) + vacinasData.doses
+        card.text = cardstr
         setSupportActionBar(toolbar)
         navigationView.bringToFront()
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.close_burger, R.string.open_burger)
@@ -41,8 +47,8 @@ class VacinacaoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         val pieEntries: ArrayList<PieEntry> = ArrayList()
         val label = "type"
         val typeAmountMap: MutableMap<String, Int> = HashMap()
-        typeAmountMap["Primeiras Doses"] = vacinasData.doses1_novas!!
-        typeAmountMap["Segundas Doses"] = vacinasData.doses2_novas!!
+        typeAmountMap[getString(R.string.first_doses)] = vacinasData.doses1!!
+        typeAmountMap[getString(R.string.second_doses)] = vacinasData.doses2!!
         val colors: ArrayList<Int> = ArrayList()
         colors.add(Color.parseColor("#66CDAA"))
         colors.add(Color.parseColor("#4682B4"))

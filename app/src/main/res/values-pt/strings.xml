@@ -47,7 +47,9 @@
     <string name="decrescente">Decrescente</string>
     <string name="ordenacao">Ordenação: </string>
     <string name="staysafe">StaySafe</string>
-    <string name="totalvacinas">Total de doses de vacinas administradas:</string>
+    <string name="totalvacinas">Total de doses de vacinas administradas:\n</string>
     <string name="ordenado_crescente">A lista foi ordenada por ordem crescente de datas</string>
     <string name="ordenado_decrescente">A lista foi ordenada por ordem decrescente de datas</string>
+    <string name="first_doses">1ª doses</string>
+    <string name="second_doses">2ª doses</string>
 </resources>

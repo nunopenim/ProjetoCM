@@ -41,7 +41,7 @@
     <string name="recuperados">Recovered:\n</string>
     <string name="obitos">Deaths:\n</string>
     <string name="internados">Interned:\n</string>
-    <string name="age_grafic">Age distribution bar chart</string>
+    <string name="age_grafic">Portuguese confirmed cases age distribution bar chart</string>
     <string name="crescente">Crescent</string>
     <string name="decrescente">Decrescent</string>
     <string name="ordenacao">Order: </string>

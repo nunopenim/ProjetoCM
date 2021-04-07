@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -70,10 +71,14 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         crescente.setOnClickListener {
             testeAdapter.testList = InfoSingleton.testList.sortedBy { it.data.time }
             testeAdapter.notifyDataSetChanged()
+            val toast = Toast.makeText(this, getString(R.string.ordenado_crescente), Toast.LENGTH_SHORT)
+            toast.show()
         }
         decrescente.setOnClickListener {
             testeAdapter.testList = InfoSingleton.testList.sortedByDescending { it.data.time }
             testeAdapter.notifyDataSetChanged()
+            val toast = Toast.makeText(this, getString(R.string.ordenado_decrescente), Toast.LENGTH_SHORT)
+            toast.show()
         }
     }
 

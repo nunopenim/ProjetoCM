@@ -52,6 +52,11 @@
             android:layout_marginRight="3dp"
             android:layout_marginTop="55dp"
             android:background="#D9001B"/>
+        <TextView
+            android:text="@string/last_24"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"/>
             <GridLayout
                 android:columnCount="2"
                 android:rowCount="2"

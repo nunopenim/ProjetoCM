@@ -52,5 +52,5 @@
     <string name="ordenado_decrescente">A lista foi ordenada por ordem decrescente de datas</string>
     <string name="first_doses">1ª doses</string>
     <string name="second_doses">2ª doses</string>
-    <string name="last_24">Ultimas 24 horas em Portugal</string>
+    <string name="last_24">Últimas 24 horas em Portugal</string>
 </resources>

@@ -103,8 +103,6 @@ class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             else {
                 Toast.makeText(this, "AAAAA", Toast.LENGTH_LONG).show() // Aqui falhou a abrir a camera seja lá porque motivo, mudar o texto
             }
-
-            takenPhotoMessage.visibility = View.VISIBLE
         }
         saveButton.setOnClickListener {
             var erro = false
@@ -138,6 +136,7 @@ class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             val takenpic = BitmapFactory.decodeFile(photoFile.absolutePath)
             photo = takenpic
+            takenPhotoMessage.visibility = View.VISIBLE
         }
         else {
             super.onActivityResult(requestCode, resultCode, data)

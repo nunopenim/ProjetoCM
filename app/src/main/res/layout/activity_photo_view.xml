@@ -11,15 +11,16 @@
 
     <ScrollView
         android:id="@+id/scrview"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFFFFF">
+
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="24dp"
@@ -44,12 +45,13 @@
                 android:layout_width="match_parent"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:contentDescription="@string/exame"
-                android:src="@drawable/teste_sample" />
-
+                android:src="@drawable/teste_sample"
+                android:layout_alignParentBottom="true"/>
 
         </RelativeLayout>
+
     </ScrollView>
 
 

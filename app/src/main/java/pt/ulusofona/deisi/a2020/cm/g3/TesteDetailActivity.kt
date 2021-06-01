@@ -1,6 +1,8 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.ImageView
@@ -25,13 +27,14 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         val local_intent = b?.getString("local")
         val data_intent = b?.getString("data")
         val resultado_intent = b?.getBoolean("resultado")
-        val foto_id = b?.getInt("photo")
+        val foto_id = b?.getByteArray("photo")
         drawerLayout = findViewById(R.id.drawer_layout_detail)
         navigationView = findViewById(R.id.nav_view_detail)
         toolbar = findViewById(R.id.toolbar_detail)
         foto = findViewById(R.id.teste_foto)
-        if (foto_id != null && foto_id != 0) {
-            foto.setImageResource(foto_id)
+        if (foto_id != null && !foto_id.contentEquals(byteArrayOf())) {
+            val foto_pic = BitmapFactory.decodeByteArray(foto_id, 0, foto_id.size)
+            foto.setImageBitmap(foto_pic)
             hasPhoto = true
         }
         setSupportActionBar(toolbar)
@@ -59,7 +62,7 @@ class TesteDetailActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             foto.setOnClickListener {
                 val intent = Intent(this, PhotoViewActivity::class.java)
                 val b = Bundle()
-                b.putInt("photo", foto_id!!)
+                b.putByteArray("photo", foto_id!!)
                 intent.putExtras(b)
                 startActivity(intent)
             }

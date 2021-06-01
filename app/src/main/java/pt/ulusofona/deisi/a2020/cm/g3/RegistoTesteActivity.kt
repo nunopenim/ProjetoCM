@@ -1,25 +1,32 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Environment
+import android.provider.MediaStore
 import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.FileProvider
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.InfoSingleton
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
-
 
 class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var drawerLayout: DrawerLayout
@@ -32,7 +39,11 @@ class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationIte
     lateinit var photoButton: MaterialButton
     lateinit var takenPhotoMessage: TextView
 
-    var hasPhoto = false
+    private val REQUEST_CODE = 51 // Arbitrário, so Area51 code it is :)
+    private lateinit var photoFile: File
+    private val FILE_NAME = "buffer.jpg"
+
+    var photo: Bitmap? = null
     lateinit var options: Array<String>
 
     val mcurrentTime = Calendar.getInstance()
@@ -81,7 +92,18 @@ class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, options)
         dropdown.adapter = adapter
         photoButton.setOnClickListener {
-            hasPhoto = true
+            val photoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            photoFile = getPhotoFile(FILE_NAME)
+            val fileprovider = FileProvider.getUriForFile(this, "pt.ulusofona.deisi.a2020.cm.g3.fileprovider", photoFile)
+            photoIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileprovider)
+
+            if (photoIntent.resolveActivity(this.packageManager) != null) {
+                startActivityForResult(photoIntent, REQUEST_CODE)
+            }
+            else {
+                Toast.makeText(this, "AAAAA", Toast.LENGTH_LONG).show() // Aqui falhou a abrir a camera seja lá porque motivo, mudar o texto
+            }
+
             takenPhotoMessage.visibility = View.VISIBLE
         }
         saveButton.setOnClickListener {
@@ -105,13 +127,20 @@ class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationIte
                 val timeStr = String.format("%04d-%02d-%02d", y, m, d)
                 val formatter = SimpleDateFormat("yyyy-MM-dd")
                 val date = formatter.parse(timeStr).time
-                var teste = Teste(local.text.toString(), resultado, Date(date), null)
-                if (hasPhoto) {
-                    teste = Teste(local.text.toString(), resultado, Date(date), R.drawable.teste_sample)
-                }
+                var teste = Teste(local.text.toString(), resultado, Date(date), photo)
                 InfoSingleton.addTestToList(teste)
                 startActivity(Intent(this, ListaTestesActivity::class.java))
             }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val takenpic = BitmapFactory.decodeFile(photoFile.absolutePath)
+            photo = takenpic
+        }
+        else {
+            super.onActivityResult(requestCode, resultCode, data)
         }
     }
 
@@ -144,6 +173,11 @@ class RegistoTesteActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             }
         }
         return true
+    }
+
+    private fun getPhotoFile(fileName: String): File {
+        val storagetemp = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        return createTempFile(fileName, ".jpg", storagetemp)
     }
 }
 

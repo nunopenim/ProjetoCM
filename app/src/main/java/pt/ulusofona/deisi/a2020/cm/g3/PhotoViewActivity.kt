@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
@@ -20,12 +21,14 @@ class PhotoViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_photo_view)
         val b = intent.extras
-        val foto_id = b?.getInt("photo")
+        val foto_id = b?.getByteArray("photo")
+
         toolbar = findViewById(R.id.toolbar_photoview)
         photo = findViewById(R.id.teste_foto_view)
         scrollView = findViewById(R.id.scrview)
         setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener {onBackPressed()}
-        photo.setImageResource(foto_id!!)
+        val foto_pic = BitmapFactory.decodeByteArray(foto_id, 0, foto_id!!.size)
+        photo.setImageBitmap(foto_pic)
     }
 }

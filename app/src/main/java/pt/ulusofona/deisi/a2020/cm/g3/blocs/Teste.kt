@@ -1,9 +1,10 @@
 package pt.ulusofona.deisi.a2020.cm.g3.blocs
 
+import android.graphics.Bitmap
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Teste (var local: String, var positivo: Boolean, var data: Date, var photo: Int?) {
+class Teste (var local: String, var positivo: Boolean, var data: Date, var photo: Bitmap?) {
 
     fun isOlder(t2: Teste): Boolean {
         if(this.data < t2.data) {

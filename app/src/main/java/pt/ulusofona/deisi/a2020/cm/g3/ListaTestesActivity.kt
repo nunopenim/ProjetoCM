@@ -1,9 +1,9 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
+import android.R.attr.bitmap
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Bitmap
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
@@ -11,14 +11,17 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.FakeAPI
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.TesteAdapter
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.InfoSingleton
+import java.io.ByteArrayOutputStream
+import java.nio.ByteBuffer
+
 
 class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var drawerLayout: DrawerLayout
@@ -57,14 +60,20 @@ class ListaTestesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         testeAdapter.onItemClick = {teste ->
             val intent = Intent(this, TesteDetailActivity::class.java)
             val b = Bundle()
-            var id = 0
+            var id: ByteArray = byteArrayOf()
             if (teste.photo != null) {
-                id = teste.photo!! //para entrar aqui será doferente de null
+                //val byteBuffer: ByteBuffer = ByteBuffer.allocate(teste.photo!!.getByteCount())
+                //teste.photo!!.copyPixelsToBuffer(byteBuffer)
+                //byteBuffer.rewind()
+                //id = byteBuffer.array() //para entrar aqui será doferente de null
+                val baos = ByteArrayOutputStream()
+                teste.photo!!.compress(Bitmap.CompressFormat.PNG, 100, baos)
+                id = baos.toByteArray()
             }
             b.putString("local", teste.local)
             b.putString("data", teste.stringMyDate())
             b.putBoolean("resultado", teste.positivo)
-            b.putInt("photo", id)
+            b.putByteArray("photo", id)
             intent.putExtras(b)
             startActivity(intent)
         }

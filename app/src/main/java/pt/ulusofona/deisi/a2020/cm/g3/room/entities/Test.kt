@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import java.util.*
 
 @Entity
-data class Teste (var local: String, var positivo: Boolean, var data: Date, var photo: Bitmap?) {
+data class Test (var local: String, var positivo: Boolean, var data: Date, var photo: Bitmap?) {
     @PrimaryKey
     var uuid: String = UUID.randomUUID().toString()
 }

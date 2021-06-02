@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 item.isChecked = false
                 drawerLayout.closeDrawer(GravityCompat.START)
                 toolbar.title = getString(R.string.add_test)
-
+                NavigationManager.registerTest(supportFragmentManager)
             }
         }
         return true

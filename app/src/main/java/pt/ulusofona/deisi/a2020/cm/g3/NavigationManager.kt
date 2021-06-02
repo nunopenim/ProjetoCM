@@ -20,6 +20,8 @@ abstract class NavigationManager {
         fun goToList(fm: FragmentManager) {
             placeFragment(fm, ListaTestesFragment())
         }
-
+        fun goToVaccination(fm: FragmentManager) {
+            placeFragment(fm, VacinacaoFragment())
+        }
     }
 }

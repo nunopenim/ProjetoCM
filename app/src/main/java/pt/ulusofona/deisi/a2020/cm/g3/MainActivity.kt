@@ -8,6 +8,9 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.InfoSingleton
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
+import java.util.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -58,16 +61,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 item.isChecked = false
                 drawerLayout.closeDrawer(GravityCompat.START)
                 toolbar.title = getString(R.string.vacinas)
+
             }
             R.id.lista_testes -> {
                 item.isChecked = false
                 drawerLayout.closeDrawer(GravityCompat.START)
                 toolbar.title = getString(R.string.lista_testes)
+                NavigationManager.goToList(supportFragmentManager)
             }
             R.id.add_teste -> {
                 item.isChecked = false
                 drawerLayout.closeDrawer(GravityCompat.START)
                 toolbar.title = getString(R.string.add_test)
+
             }
         }
         return true

@@ -33,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+        <!--<activity
             android:name=".PhotoViewActivity"
             android:label="@string/test_foto" />
         <activity
@@ -50,7 +50,7 @@
             android:label="@string/vacinas" />
         <activity
             android:name=".ContactosActivity"
-            android:label="@string/contactos" />
+            android:label="@string/contactos" /> -->
         <activity
             android:name=".MainActivity"
             android:label="@string/Dashboard"></activity>

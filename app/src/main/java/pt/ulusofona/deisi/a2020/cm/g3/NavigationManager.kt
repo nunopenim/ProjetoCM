@@ -23,5 +23,8 @@ abstract class NavigationManager {
         fun goToVaccination(fm: FragmentManager) {
             placeFragment(fm, VacinacaoFragment())
         }
+        fun registerTest(fm: FragmentManager) {
+            placeFragment(fm, RegistoTesteFragment())
+        }
     }
 }

@@ -43,25 +43,31 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.dashboard -> {
-                drawerLayout.closeDrawer(GravityCompat.START)
                 item.isChecked = false
+                drawerLayout.closeDrawer(GravityCompat.START)
+                toolbar.title = getString(R.string.Dashboard)
                 NavigationManager.goToDashboard(supportFragmentManager)
             }
             R.id.contactos -> {
-                drawerLayout.closeDrawer(GravityCompat.START)
                 item.isChecked = false
+                drawerLayout.closeDrawer(GravityCompat.START)
+                toolbar.title = getString(R.string.contactos)
+                NavigationManager.goToContacts(supportFragmentManager)
             }
             R.id.vacinas -> {
-                drawerLayout.closeDrawer(GravityCompat.START)
                 item.isChecked = false
+                drawerLayout.closeDrawer(GravityCompat.START)
+                toolbar.title = getString(R.string.vacinas)
             }
             R.id.lista_testes -> {
-                drawerLayout.closeDrawer(GravityCompat.START)
                 item.isChecked = false
+                drawerLayout.closeDrawer(GravityCompat.START)
+                toolbar.title = getString(R.string.lista_testes)
             }
             R.id.add_teste -> {
-                drawerLayout.closeDrawer(GravityCompat.START)
                 item.isChecked = false
+                drawerLayout.closeDrawer(GravityCompat.START)
+                toolbar.title = getString(R.string.add_test)
             }
         }
         return true

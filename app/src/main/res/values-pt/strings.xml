@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ProjetoCM</string>
+    <string name="app_name">StaySafe</string>
     <string name="Dashboard">Página principal</string>
     <string name="lista_testes">Listagem de Testes</string>
     <string name="vacinas">Estado da Vacinação</string>

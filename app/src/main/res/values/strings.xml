@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjetoCM</string>
+    <string name="app_name">StaySafe</string>
     <string name="Dashboard">Home Page</string>
     <string name="lista_testes">Test List</string>
     <string name="vacinas">Vaccination Status</string>

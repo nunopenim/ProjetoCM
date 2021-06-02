@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 item.isChecked = false
                 drawerLayout.closeDrawer(GravityCompat.START)
                 toolbar.title = getString(R.string.vacinas)
-
+                NavigationManager.goToVaccination(supportFragmentManager)
             }
             R.id.lista_testes -> {
                 item.isChecked = false

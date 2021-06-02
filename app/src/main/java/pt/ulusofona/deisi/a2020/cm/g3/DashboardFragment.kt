@@ -25,7 +25,6 @@ class DashboardFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        super.onCreate(savedInstanceState)
         //cards
         val confirmados = view?.findViewById<TextView>(R.id.confirmados)
         val recuperados = view?.findViewById<TextView>(R.id.recuperados)

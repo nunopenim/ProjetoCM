@@ -33,27 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity
-            android:name=".PhotoViewActivity"
-            android:label="@string/test_foto" />
-        <activity
-            android:name=".TesteDetailActivity"
-            android:label="@string/teste_detail" />
-        <activity
-            android:name=".RegistoTesteActivity"
-            android:label="@string/add_test" />
-        <activity
-            android:name=".ListaTestesActivity"
-            android:label="@string/lista_testes" />
-        <activity
-            android:name=".VacinacaoActivity"
-            android:label="@string/vacinas" />
-        <activity
-            android:name=".ContactosActivity"
-            android:label="@string/contactos" /> -->
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/Dashboard"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

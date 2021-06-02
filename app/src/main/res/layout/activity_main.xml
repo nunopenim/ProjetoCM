@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -36,170 +37,13 @@
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-    <TableLayout android:id="@+id/TableLayout01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
-            android:text="@string/danger"
-            android:textColor="#F6F6F6"
-            android:textSize="18sp"
-            android:textAlignment="center"
-            android:id="@+id/TextView01"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginBottom="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_marginTop="55dp"
-            android:background="#D9001B"/>
-        <TextView
-            android:text="@string/last_24"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"/>
-            <GridLayout
-                android:columnCount="2"
-                android:rowCount="2"
-                android:alignmentMode="alignMargins"
-                android:columnOrderPreserved="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp"
-                    >
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
-                            android:src="@drawable/lavar" />
-                        <TextView
-                            android:id="@+id/confirmados"
-                            android:layout_width="wrap_content"
-                            android:layout_height="56dp"
-                            android:layout_marginTop="12dp"
-                            android:maxLines="2"
-                            android:textAlignment="center"
-                            android:text="@string/confirmados"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp"
-                    >
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <ImageView
-                            android:src="@drawable/sabonete"
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
-                            />
-                        <TextView
-                            android:id="@+id/recuperados"
-                            android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp"
-                            android:textAlignment="center"
-                            android:text="@string/recuperados"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp"
-                    >
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <ImageView
-                            android:src="@drawable/menina"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            />
-                        <TextView
-                            android:id="@+id/obitos"
-                            android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp"
-                            android:textAlignment="center"
-                            android:text= "@string/obitos"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp"
-                    >
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <ImageView
-                            android:src="@drawable/sabao"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            />
 
-                        <TextView
-                            android:id="@+id/internados"
-                            android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp"
-                            android:textAlignment="center"
-                            android:text= "@string/internados"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-        </GridLayout>
-        <TextView
-            android:text="@string/age_grafic"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="14sp"/>
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/chart1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/white" />
-    </TableLayout>
+
+    <FrameLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        tools:context=".DashboardFragment"
+        android:id="@+id/frame">
+    </FrameLayout>
+
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -29,5 +29,8 @@ abstract class NavigationManager {
         fun testDetail(fm: FragmentManager, uuid: String) {
             placeFragment(fm, TestDetailFragment(uuid))
         }
+        fun photoViewer(fm: FragmentManager, uuid: String) {
+            placeFragment(fm, PhotoViewFragment(uuid))
+        }
     }
 }

@@ -1,6 +1,7 @@
 package pt.ulusofona.deisi.a2020.cm.g3.blocs
 
 import android.graphics.Bitmap
+import android.util.Log
 import pt.ulusofona.deisi.a2020.cm.g3.data.entities.Test
 import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
@@ -31,14 +32,15 @@ class Teste (var local: String, var positivo: Boolean, var data: Date, var photo
     }
 
     fun convertToTest() : Test {
-        if (photo != null) {
-            val baos = ByteArrayOutputStream()
-            photo!!.compress(Bitmap.CompressFormat.PNG, 100, baos)
-            val id = baos.toByteArray()
-            return Test(uuid, local, positivo, data.time, id)
+        if (photo == null) {
+            return Test(uuid, local, positivo, data.time, null)
         }
         else {
-            return Test(uuid, local, positivo, data.time, null)
+            val baos = ByteArrayOutputStream()
+            photo!!.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+            val id = baos.toByteArray()
+            return Test(uuid, local, positivo, data.time, id)
+
         }
     }
 

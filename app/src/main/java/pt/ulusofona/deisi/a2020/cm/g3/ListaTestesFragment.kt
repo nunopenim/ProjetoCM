@@ -41,6 +41,8 @@ class ListaTestesFragment : Fragment() {
 
         // https://stackoverflow.com/questions/3913592/start-an-activity-with-a-parameter :)
         testeAdapter.onItemClick = {teste ->
+            NavigationManager.testDetail(activity!!.supportFragmentManager, teste.uuid)
+
             /*val intent = Intent(this, TesteDetailActivity::class.java)
             val b = Bundle()
             var id: ByteArray = byteArrayOf()

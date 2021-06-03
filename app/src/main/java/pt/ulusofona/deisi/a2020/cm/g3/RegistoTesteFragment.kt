@@ -1,9 +1,11 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -31,6 +33,8 @@ class RegistoTesteFragment : Fragment() {
     private lateinit var photoFile: File
     private val FILE_NAME = "buffer.jpg"
 
+    lateinit var takenPhotoMessage: TextView
+
     var photo: Bitmap? = null
     lateinit var options: Array<String>
 
@@ -55,7 +59,7 @@ class RegistoTesteFragment : Fragment() {
         val dropdown: Spinner = view!!.findViewById(R.id.result_spinner)
         val saveButton: MaterialButton = view!!.findViewById(R.id.regist_test)
         val photoButton: MaterialButton= view!!.findViewById(R.id.take_foto)
-        val takenPhotoMessage: TextView = view!!.findViewById(R.id.foto_tirada)
+        takenPhotoMessage = view!!.findViewById<TextView>(R.id.foto_tirada)
         val datePicker = DatePickerDialog((activity as Context), DatePickerDialog.OnDateSetListener
         {view , year, month, dayOfMonth ->
             dataTeste.text = String.format("%02d / %02d / %04d", dayOfMonth, month + 1, year)
@@ -110,6 +114,18 @@ class RegistoTesteFragment : Fragment() {
             }
         }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val takenpic = BitmapFactory.decodeFile(photoFile.absolutePath)
+            photo = takenpic
+            takenPhotoMessage.visibility = View.VISIBLE
+        }
+        else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
     private fun getPhotoFile(fileName: String): File {
         val storagetemp = activity!!.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return createTempFile(fileName, ".jpg", storagetemp)

@@ -16,6 +16,7 @@ class ListaTestesLogic(private val storage: TestDao) {
 
     fun loadFromDB() {
         CoroutineScope(Dispatchers.IO).launch {
+            testList = ArrayList()
             val lst = storage.getAll()
             for (i in lst) {
                 testList.add(i.convertToTeste())

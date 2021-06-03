@@ -1,28 +1,19 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import com.github.mikephil.charting.charts.BarChart
-import com.github.mikephil.charting.data.BarData
-import com.github.mikephil.charting.data.BarDataSet
-import com.github.mikephil.charting.data.BarEntry
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.FakeAPI
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.DashboardViewModel
 
 
 class DashboardFragment : Fragment() {
 
     private lateinit var viewModel: DashboardViewModel
-
-    lateinit var chart: BarChart
-    var data = FakeAPI.fakeData()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
@@ -49,7 +40,7 @@ class DashboardFragment : Fragment() {
         obitos?.text = obitosstr
 
         //chart stuff
-        chart = view?.findViewById<BarChart>(R.id.chart1)!!
+        val chart: BarChart = view?.findViewById<BarChart>(R.id.chart1)!!
         chart.data = viewModel.onLoadGraphBuilder()
         chart.xAxis.setDrawLabels(false)
         chart.description.text = ""

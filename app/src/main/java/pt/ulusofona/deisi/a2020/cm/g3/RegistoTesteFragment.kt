@@ -16,20 +16,18 @@ import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.FileProvider
+import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.button.MaterialButton
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.InfoSingleton
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
+import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.RegistoTesteViewModel
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
 class RegistoTesteFragment : Fragment() {
-    lateinit var local: TextView
-    lateinit var dataTeste: TextView
-    lateinit var dropdown: Spinner
-    lateinit var saveButton: MaterialButton
-    lateinit var photoButton: MaterialButton
-    lateinit var takenPhotoMessage: TextView
+
+    private lateinit var viewModel: RegistoTesteViewModel
 
     private val REQUEST_CODE = 51 // Arbitrário, so Area51 code it is :)
     private lateinit var photoFile: File
@@ -47,17 +45,19 @@ class RegistoTesteFragment : Fragment() {
     var d = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_registo_teste, container, false)
+        val view = inflater.inflate(R.layout.fragment_registo_teste, container, false)
+        viewModel = ViewModelProviders.of(this).get(RegistoTesteViewModel::class.java)
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        local = view!!.findViewById(R.id.local)
-        dataTeste = view!!.findViewById(R.id.data)
-        dropdown = view!!.findViewById(R.id.result_spinner)
-        saveButton = view!!.findViewById(R.id.regist_test)
-        photoButton = view!!.findViewById(R.id.take_foto)
-        takenPhotoMessage = view!!.findViewById(R.id.foto_tirada)
+        val local: TextView = view!!.findViewById(R.id.local)
+        val dataTeste: TextView = view!!.findViewById(R.id.data)
+        val dropdown: Spinner = view!!.findViewById(R.id.result_spinner)
+        val saveButton: MaterialButton = view!!.findViewById(R.id.regist_test)
+        val photoButton: MaterialButton= view!!.findViewById(R.id.take_foto)
+        val takenPhotoMessage: TextView = view!!.findViewById(R.id.foto_tirada)
         val datePicker = DatePickerDialog((activity as Context), DatePickerDialog.OnDateSetListener
         {view , year, month, dayOfMonth ->
             dataTeste.text = String.format("%02d / %02d / %04d", dayOfMonth, month + 1, year)
@@ -104,8 +104,9 @@ class RegistoTesteFragment : Fragment() {
                 val timeStr = String.format("%04d-%02d-%02d", y, m, d)
                 val formatter = SimpleDateFormat("yyyy-MM-dd")
                 val date = formatter.parse(timeStr).time
-                var teste = Teste(local.text.toString(), resultado, Date(date), photo)
-                InfoSingleton.addTestToList(teste)
+
+                viewModel.onClickSave(local.text.toString(), resultado, Date(date), photo)
+
                 NavigationManager.goToList(activity!!.supportFragmentManager)
             }
         }

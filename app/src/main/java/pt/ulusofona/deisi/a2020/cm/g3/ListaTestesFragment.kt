@@ -9,25 +9,31 @@ import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.TesteAdapter
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.InfoSingleton
+import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.ListaTestesViewModel
 
 class ListaTestesFragment : Fragment() {
 
+    private lateinit var viewModel: ListaTestesViewModel
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_lista_testes, container, false)
+        val view = inflater.inflate(R.layout.fragment_lista_testes, container, false)
+        viewModel = ViewModelProviders.of(this).get(ListaTestesViewModel::class.java)
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val crescente : Button? = view?.findViewById(R.id.crescente)
         val decrescente : Button? = view?.findViewById(R.id.decrescente)
-        val testeAdapter  = TesteAdapter(InfoSingleton.testList)
+
         val rv : RecyclerView? = view?.findViewById(R.id.recycler_testes)
         val relative_rv : RelativeLayout? = view?.findViewById(R.id.relative_recycler)
         val emptyList : TextView? = view?.findViewById(R.id.emptyList)
-        if (InfoSingleton.testList.size != 0) {
+
+        val testeAdapter  = viewModel.onLoadAdapter()
+        if (viewModel.getList().isNotEmpty()) {
             relative_rv?.visibility = View.VISIBLE
             emptyList?.visibility = View.GONE
         }
@@ -55,14 +61,12 @@ class ListaTestesFragment : Fragment() {
             startActivity(intent)*/
         }
         crescente!!.setOnClickListener {
-            testeAdapter.testList = InfoSingleton.testList.sortedBy { it.data.time }
-            testeAdapter.notifyDataSetChanged()
+            viewModel.orderCrescente()
             val toast = Toast.makeText(activity, getString(R.string.ordenado_crescente), Toast.LENGTH_SHORT)
             toast.show()
         }
         decrescente!!.setOnClickListener {
-            testeAdapter.testList = InfoSingleton.testList.sortedByDescending { it.data.time }
-            testeAdapter.notifyDataSetChanged()
+            viewModel.orderDecrescente()
             val toast = Toast.makeText(activity, getString(R.string.ordenado_decrescente), Toast.LENGTH_SHORT)
             toast.show()
         }

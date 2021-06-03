@@ -51,7 +51,7 @@ class TestDetailFragment(uuid: String) : Fragment() {
         resultado.text = resultadostr
         if (hasPhoto) {
             foto.setOnClickListener {
-                NavigationManager.photoViewer(activity!!.supportFragmentManager, uud)
+                NavigationManager.photoViewer(activity!!.supportFragmentManager, viewModel)
             }
         }
     }

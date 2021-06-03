@@ -9,21 +9,19 @@ import androidx.lifecycle.ViewModelProviders
 import com.github.chrisbanes.photoview.PhotoView
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.TestDetailViewModel
 
-class PhotoViewFragment(uuid: String) : Fragment() {
+class PhotoViewFragment(viewModel: TestDetailViewModel) : Fragment() {
 
-    val uud = uuid
-    private lateinit var viewModel: TestDetailViewModel
+    val vm = viewModel
     lateinit var photo: PhotoView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_photo_view, container, false)
-        viewModel = ViewModelProviders.of(this).get(TestDetailViewModel::class.java)
         return view
     }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         photo = activity!!.findViewById(R.id.teste_foto_view)
-        val teste = viewModel.loadTeste(uud)
+        val teste = vm.getTeste()
         photo.setImageBitmap(teste.photo)
     }
 

@@ -2,6 +2,7 @@ package pt.ulusofona.deisi.a2020.cm.g3
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.TestDetailViewModel
 
 abstract class NavigationManager {
     companion object {
@@ -11,6 +12,7 @@ abstract class NavigationManager {
             transition.addToBackStack(null)
             transition.commit()
         }
+
         fun goToDashboard(fm: FragmentManager) {
             placeFragment(fm, DashboardFragment())
         }
@@ -29,8 +31,9 @@ abstract class NavigationManager {
         fun testDetail(fm: FragmentManager, uuid: String) {
             placeFragment(fm, TestDetailFragment(uuid))
         }
-        fun photoViewer(fm: FragmentManager, uuid: String) {
-            placeFragment(fm, PhotoViewFragment(uuid))
+        fun photoViewer(fm: FragmentManager, vm: TestDetailViewModel) {
+            placeFragment(fm, PhotoViewFragment(vm))
         }
+
     }
 }

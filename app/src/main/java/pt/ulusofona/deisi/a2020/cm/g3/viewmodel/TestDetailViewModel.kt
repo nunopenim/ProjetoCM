@@ -15,4 +15,8 @@ class TestDetailViewModel(application: Application) : AndroidViewModel(applicati
         return logic.loadTest(uuid)
     }
 
+    fun getTeste() : Teste {
+        return logic.testToAnalyse
+    }
+
 }

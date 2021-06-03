@@ -37,7 +37,7 @@ class Teste (var local: String, var positivo: Boolean, var data: Date, var photo
         }
         else {
             val baos = ByteArrayOutputStream()
-            photo!!.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+            photo!!.compress(Bitmap.CompressFormat.JPEG, 25, baos)
             val id = baos.toByteArray()
             return Test(uuid, local, positivo, data.time, id)
 

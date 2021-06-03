@@ -1,14 +1,19 @@
 package pt.ulusofona.deisi.a2020.cm.g3.logic
 
 import android.graphics.Bitmap
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.InfoSingleton
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
+import pt.ulusofona.deisi.a2020.cm.g3.data.dao.TestDao
 import java.util.*
 
-class RegistoTesteLogic {
+class RegistoTesteLogic (private val storage: TestDao){
 
     fun addTest(local: String, result: Boolean, date: Date, pic: Bitmap?) {
-        InfoSingleton.addTestToList(Teste(local, result, date, pic))
+        CoroutineScope(Dispatchers.IO).launch {
+            storage.insert(Teste(local, result, date, pic).convertToTest())
+        }
     }
 
 }

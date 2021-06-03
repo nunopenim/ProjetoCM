@@ -1,11 +1,13 @@
-package pt.ulusofona.deisi.a2020.cm.g3.room
+package pt.ulusofona.deisi.a2020.cm.g3.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import pt.ulusofona.deisi.a2020.cm.g3.room.dao.TestDao
-import pt.ulusofona.deisi.a2020.cm.g3.room.entities.Test
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import pt.ulusofona.deisi.a2020.cm.g3.data.dao.TestDao
+import pt.ulusofona.deisi.a2020.cm.g3.data.entities.Test
 
 @Database(entities = arrayOf(Test::class), version = 1)
 abstract class TestsDatabase : RoomDatabase() {
@@ -23,4 +25,5 @@ abstract class TestsDatabase : RoomDatabase() {
             }
         }
     }
+
 }

@@ -18,8 +18,6 @@ import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.button.MaterialButton
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.InfoSingleton
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.RegistoTesteViewModel
 import java.io.File
 import java.text.SimpleDateFormat
@@ -107,7 +105,8 @@ class RegistoTesteFragment : Fragment() {
 
                 viewModel.onClickSave(local.text.toString(), resultado, Date(date), photo)
 
-                NavigationManager.goToList(activity!!.supportFragmentManager)
+                activity!!.title = getString(R.string.Dashboard)
+                NavigationManager.goToDashboard(activity!!.supportFragmentManager)
             }
         }
     }

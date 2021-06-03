@@ -1,15 +1,21 @@
 package pt.ulusofona.deisi.a2020.cm.g3.viewmodel
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.TesteAdapter
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
+import pt.ulusofona.deisi.a2020.cm.g3.data.TestsDatabase
 import pt.ulusofona.deisi.a2020.cm.g3.logic.ListaTestesLogic
 
-class ListaTestesViewModel : ViewModel()  {
-    private val logic: ListaTestesLogic = ListaTestesLogic()
+class ListaTestesViewModel(application: Application) : AndroidViewModel(application)  {
+
+    private val storage = TestsDatabase.getInstace(application).testDao()
+    private val logic: ListaTestesLogic = ListaTestesLogic(storage)
 
     fun onLoadAdapter() : TesteAdapter {
-        return logic.onLoadGetAdapter()
+        logic.loadFromDB()
+        val adapter = logic.onLoadGetAdapter()
+        return adapter
     }
 
     fun getList() : List<Teste> {

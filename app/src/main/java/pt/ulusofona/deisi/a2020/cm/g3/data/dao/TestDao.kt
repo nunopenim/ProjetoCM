@@ -1,9 +1,9 @@
-package pt.ulusofona.deisi.a2020.cm.g3.room.dao
+package pt.ulusofona.deisi.a2020.cm.g3.data.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import pt.ulusofona.deisi.a2020.cm.g3.room.entities.Test
+import pt.ulusofona.deisi.a2020.cm.g3.data.entities.Test
 
 @Dao
 interface TestDao {

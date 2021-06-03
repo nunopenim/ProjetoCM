@@ -1,14 +1,38 @@
 package pt.ulusofona.deisi.a2020.cm.g3.logic
 
+import android.util.Log
+import kotlinx.coroutines.*
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.TesteAdapter
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.InfoSingleton
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
+import pt.ulusofona.deisi.a2020.cm.g3.data.dao.TestDao
+import kotlin.collections.ArrayList
 
-class ListaTestesLogic {
+class ListaTestesLogic(private val storage: TestDao) {
 
-    val adapter = TesteAdapter(InfoSingleton.testList)
+    var loaded = false //remover!! usar observable-observer
+
+    var testList = ArrayList<Teste>()
+    lateinit var adapter : TesteAdapter
+
+    fun loadFromDB() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val lst = storage.getAll()
+            for (i in lst) {
+                testList.add(i.convertToTeste())
+            }
+
+            loaded = true //remover!! usar observable-observer
+
+        }
+    }
 
     fun onLoadGetAdapter() : TesteAdapter {
+
+        while(!loaded) { //remover!! usar observable-observer
+        }
+        loaded = !loaded //remover!! usar observable-observer
+
+        adapter = TesteAdapter(testList)
         return adapter
     }
 
@@ -17,12 +41,12 @@ class ListaTestesLogic {
     }
 
     fun sortCrescente() {
-        adapter.testList = InfoSingleton.testList.sortedBy { it.data.time }
+        adapter.testList = testList.sortedBy { it.data.time }
         adapter.notifyDataSetChanged()
     }
 
     fun sortDecrescente() {
-        adapter.testList = InfoSingleton.testList.sortedByDescending { it.data.time }
+        adapter.testList = testList.sortedByDescending { it.data.time }
         adapter.notifyDataSetChanged()
     }
 }

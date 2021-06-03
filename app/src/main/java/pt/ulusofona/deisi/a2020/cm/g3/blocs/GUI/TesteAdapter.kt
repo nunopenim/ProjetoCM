@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import pt.ulusofona.deisi.a2020.cm.g3.R
@@ -15,11 +16,19 @@ class TesteAdapter (var testList: List<Teste>) : RecyclerView.Adapter<TesteAdapt
 
     inner class TesteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        var icon = itemView.findViewById<ImageView>(R.id.image_view)
+
         var number = itemView.findViewById<TextView>(R.id.test_number)
         var date = itemView.findViewById<TextView>(R.id.test_date)
         var result = itemView.findViewById<TextView>(R.id.test_result)
 
         fun bind(teste: Teste) {
+            if(teste.hasPhoto()) {
+                icon.setBackgroundResource(R.drawable.has_test)
+            }
+            else {
+                icon.setBackgroundResource(R.drawable.has_no_test)
+            }
             number.setText(teste.local)
             date.setText(teste.stringMyDate())
             if(teste.positivo) {
@@ -28,6 +37,7 @@ class TesteAdapter (var testList: List<Teste>) : RecyclerView.Adapter<TesteAdapt
             else {
                 result.setText(R.string.result_neg)
             }
+
             itemView.setOnClickListener {
                 onItemClick?.invoke(testList.get(adapterPosition))
             }

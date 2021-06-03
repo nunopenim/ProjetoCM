@@ -1,57 +1,38 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProviders
 import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.data.PieData
-import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.FakeAPI
+import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.VacinacaoViewModel
 
 class VacinacaoFragment : Fragment() {
 
-    lateinit var chart: PieChart
-    lateinit var card: TextView
-
-    var vacinasData = FakeAPI.fakeVaccines()
+    private lateinit var viewModel: VacinacaoViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_vacinacao, container, false)
+        val view = inflater.inflate(R.layout.fragment_vacinacao, container, false)
+        viewModel = ViewModelProviders.of(this).get(VacinacaoViewModel::class.java)
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        card = view!!.findViewById(R.id.confirmados)
-        val cardstr = getString(R.string.totalvacinas) + vacinasData.doses
+
+        val card: TextView = view!!.findViewById(R.id.confirmados)
+        val cardstr = getString(R.string.totalvacinas) + viewModel.onLoadCardBuilder()
         card.text = cardstr
+
         //chart
-        chart = view!!.findViewById(R.id.pieChart)
-        val pieEntries: ArrayList<PieEntry> = ArrayList()
-        val label = "type"
-        val typeAmountMap: MutableMap<String, Int> = HashMap()
-        typeAmountMap[getString(R.string.first_doses)] = vacinasData.doses1!!
-        typeAmountMap[getString(R.string.second_doses)] = vacinasData.doses2!!
-        val colors: ArrayList<Int> = ArrayList()
-        colors.add(Color.parseColor("#66CDAA"))
-        colors.add(Color.parseColor("#4682B4"))
-        for (type in typeAmountMap.keys) {
-            pieEntries.add(PieEntry(typeAmountMap[type]!!.toFloat(), type))
-        }
-        val pieDataSet = PieDataSet(pieEntries, label)
-        pieDataSet.valueTextSize = 15f
-        pieDataSet.valueTextColor = Color.WHITE
-        pieDataSet.colors = colors
-        val pieData = PieData(pieDataSet)
-        pieData.setDrawValues(true)
+        val chart: PieChart = view!!.findViewById(R.id.pieChart)
         chart.setEntryLabelTextSize(15f)
         chart.legend.isEnabled = false
         chart.description.text = ""
-        chart.data = pieData
+        chart.data = viewModel.onLoadChartBuilder(getString(R.string.first_doses), getString(R.string.second_doses))
     }
 
 }

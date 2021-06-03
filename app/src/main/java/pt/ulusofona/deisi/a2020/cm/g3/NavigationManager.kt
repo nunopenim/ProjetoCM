@@ -26,5 +26,8 @@ abstract class NavigationManager {
         fun registerTest(fm: FragmentManager) {
             placeFragment(fm, RegistoTesteFragment())
         }
+        fun testDetail(fm: FragmentManager, uuid: String) {
+            placeFragment(fm, TestDetailFragment(uuid))
+        }
     }
 }

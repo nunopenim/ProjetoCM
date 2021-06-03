@@ -22,6 +22,7 @@ class TestDetailLogic(private val storage: TestDao) {
     fun loadTest(uuid: String) : Teste{
         getTest(uuid)
         while(!improvisedSem){
+            Thread.sleep(1)
         }
         improvisedSem = false
         return testToAnalyse

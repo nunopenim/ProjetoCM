@@ -21,17 +21,16 @@ class ListaTestesLogic(private val storage: TestDao) {
             for (i in lst) {
                 testList.add(i.convertToTeste())
             }
-
             loaded = true //remover!! usar observable-observer
-
         }
     }
 
     fun onLoadGetAdapter() : TesteAdapter {
 
-        while(!loaded) { //remover!! usar observable-observer
+        while(!loaded) {
+            Thread.sleep(1)
         }
-        loaded = !loaded //remover!! usar observable-observer
+        loaded = false //remover!! usar observable-observer
 
         adapter = TesteAdapter(testList)
         return adapter

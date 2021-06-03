@@ -51,13 +51,8 @@ class TestDetailFragment(uuid: String) : Fragment() {
         resultado.text = resultadostr
         if (hasPhoto) {
             foto.setOnClickListener {
-                /*val intent = Intent(this, PhotoViewActivity::class.java)
-                val b = Bundle()
-                b.putByteArray("photo", foto_id!!)
-                intent.putExtras(b)
-                startActivity(intent)*/
+                NavigationManager.photoViewer(activity!!.supportFragmentManager, uud)
             }
         }
     }
-
 }

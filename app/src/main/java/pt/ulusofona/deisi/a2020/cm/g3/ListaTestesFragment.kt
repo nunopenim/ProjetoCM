@@ -42,25 +42,6 @@ class ListaTestesFragment : Fragment() {
         // https://stackoverflow.com/questions/3913592/start-an-activity-with-a-parameter :)
         testeAdapter.onItemClick = {teste ->
             NavigationManager.testDetail(activity!!.supportFragmentManager, teste.uuid)
-
-            /*val intent = Intent(this, TesteDetailActivity::class.java)
-            val b = Bundle()
-            var id: ByteArray = byteArrayOf()
-            if (teste.photo != null) {
-                //val byteBuffer: ByteBuffer = ByteBuffer.allocate(teste.photo!!.getByteCount())
-                //teste.photo!!.copyPixelsToBuffer(byteBuffer)
-                //byteBuffer.rewind()
-                //id = byteBuffer.array() //para entrar aqui será doferente de null
-                val baos = ByteArrayOutputStream()
-                teste.photo!!.compress(Bitmap.CompressFormat.PNG, 100, baos)
-                id = baos.toByteArray()
-            }
-            b.putString("local", teste.local)
-            b.putString("data", teste.stringMyDate())
-            b.putBoolean("resultado", teste.positivo)
-            b.putByteArray("photo", id)
-            intent.putExtras(b)
-            startActivity(intent)*/
         }
         crescente!!.setOnClickListener {
             viewModel.orderCrescente()

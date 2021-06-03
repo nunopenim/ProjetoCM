@@ -21,9 +21,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        InfoSingleton.initTestListDebug()
-
         setContentView(R.layout.activity_main)
         NavigationManager.goToDashboard(supportFragmentManager)
         drawerLayout = findViewById(R.id.drawer_layout)

@@ -9,7 +9,12 @@
     <string name="statistics">Statistics</string>
     <string name="extra_info">Other informations</string>
     <string name="add_test">Test register</string>
+    
     <string name="danger">The area you are in is dangerous</string>
+    <string name="risky">The area you are in is risky</string>
+    <string name="moderate">The area you are in is moderate</string>
+    <string name="safe">The area you are in is safe</string>
+    
     <string name="phone_contacts">Telephonic contacts COVID 19 </string>
     <string name="sns_line_symnptoms">SNS 24 line for symptom tracking and question answering.</string>
     <string name="social_sec_line">Social security line for questions about family assistance, disease benefit and quarantine.</string>

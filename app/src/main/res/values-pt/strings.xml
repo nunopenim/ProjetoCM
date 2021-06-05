@@ -10,7 +10,12 @@
     <string name="statistics">Estatísticas</string>
     <string name="extra_info">Outras Informações</string>
     <string name="add_test">Registo de testes</string>
-    <string name="danger">A zona que você está é perigosa</string>
+
+    <string name="danger">A zona onde está é perigosa</string>
+    <string name="risky">A zona onde está é insegura</string>
+    <string name="moderate">A zona onde está é moderadamente segura</string>
+    <string name="safe">A zona onde está é segura</string>
+
     <string name="phone_contacts">Contactos telefónicos COVID19 </string>
     <string name="sns_line_symnptoms">Linha SNS 24 para triagem de sintomas e esclarecimento de dúvidas sobre COVID-19.</string>
     <string name="social_sec_line">Linha Segurança Social para esclarecimentos sobre assistência à família, subsidio de doença e quarentena.</string>

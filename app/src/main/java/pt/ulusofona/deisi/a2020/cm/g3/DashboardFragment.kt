@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import com.github.mikephil.charting.charts.BarChart
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.DashboardViewModel
 
 
@@ -23,6 +24,10 @@ class DashboardFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
+        DangerChanger.setToSafe(waarning!!, activity!!)
+
         val cardData = viewModel.onLoadCardBuilder()
 
         //cards

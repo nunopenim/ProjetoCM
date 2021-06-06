@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import com.github.mikephil.charting.charts.PieChart
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.VacinacaoViewModel
 
 class VacinacaoFragment : Fragment() {
@@ -21,6 +22,8 @@ class VacinacaoFragment : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
+        DangerChanger.setToModerate(waarning!!, activity!!)
         super.onActivityCreated(savedInstanceState)
 
         val card: TextView = view!!.findViewById(R.id.confirmados)

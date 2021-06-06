@@ -20,6 +20,7 @@ import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.button.MaterialButton
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.RegistoTesteViewModel
 import java.io.File
 import java.text.SimpleDateFormat
@@ -53,6 +54,8 @@ class RegistoTesteFragment : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
+        DangerChanger.setToModerate(waarning!!, activity!!)
         super.onActivityCreated(savedInstanceState)
         val local: TextView = view!!.findViewById(R.id.local)
         val dataTeste: TextView = view!!.findViewById(R.id.data)

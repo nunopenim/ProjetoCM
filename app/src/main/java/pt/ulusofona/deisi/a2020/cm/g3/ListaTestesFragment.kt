@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.ListaTestesViewModel
 
 class ListaTestesFragment : Fragment() {
@@ -24,6 +25,9 @@ class ListaTestesFragment : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
+        DangerChanger.setToDangerous(waarning!!, activity!!)
+
         super.onActivityCreated(savedInstanceState)
         val crescente : Button? = view?.findViewById(R.id.crescente)
         val decrescente : Button? = view?.findViewById(R.id.decrescente)

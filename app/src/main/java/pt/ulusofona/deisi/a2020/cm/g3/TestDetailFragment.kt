@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.TestDetailViewModel
 
 class TestDetailFragment(uuid: String) : Fragment() {
@@ -23,6 +24,8 @@ class TestDetailFragment(uuid: String) : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?){
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
+        DangerChanger.setToModerate(waarning!!, activity!!)
         super.onActivityCreated(savedInstanceState)
         val teste = viewModel.loadTeste(uud)
         val local_intent = teste.local

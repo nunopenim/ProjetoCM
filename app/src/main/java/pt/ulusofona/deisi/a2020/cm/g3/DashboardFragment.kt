@@ -26,7 +26,7 @@ class DashboardFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         val waarning = view?.findViewById<TextView>(R.id.TextView01)
-        DangerChanger.setToSafe(waarning!!, activity!!)
+        DangerChanger.setToDangerous(waarning!!, activity!!)
 
         val cardData = viewModel.onLoadCardBuilder()
 

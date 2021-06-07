@@ -20,9 +20,6 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 import java.util.*
 
-//const val API_URL = "https://covid19-api.vost.pt/"
-//const val VacinasURL = "https://www.vacinacaocovid19.pt/"
-
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var drawerLayout: DrawerLayout

@@ -36,6 +36,7 @@ class DashboardFragment : Fragment(), OnDataRecieved {
     }
 
     override fun onDataRecieved(value: Data?) {
+
         val waarning = view?.findViewById<TextView>(R.id.TextView01)
         DangerChanger.setToDangerous(waarning!!, activity!!)
 

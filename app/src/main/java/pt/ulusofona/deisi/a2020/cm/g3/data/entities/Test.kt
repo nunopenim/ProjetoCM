@@ -1,7 +1,6 @@
 package pt.ulusofona.deisi.a2020.cm.g3.data.entities
 
 import android.graphics.BitmapFactory
-import android.util.Log
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste

@@ -6,15 +6,15 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import pt.ulusofona.deisi.a2020.cm.g3.R
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.FakeAPI
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Vacinas
 
 class VacinacaoLogic {
-    var vacinasData = FakeAPI.fakeVaccines()
 
-    fun getTotalDosage() : String {
+    fun getTotalDosage(vacinasData: Vacinas) : String {
         return "" + vacinasData.doses
     }
 
-    fun buildChart(fst: String, snd: String) : PieData{
+    fun buildChart(fst: String, snd: String, vacinasData: Vacinas) : PieData{
         val pieEntries: ArrayList<PieEntry> = ArrayList()
         val label = "type"
         val typeAmountMap: MutableMap<String, Int> = HashMap()

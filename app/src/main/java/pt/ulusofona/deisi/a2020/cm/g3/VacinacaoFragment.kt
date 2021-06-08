@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import com.github.mikephil.charting.charts.PieChart
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Vacinas
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
+import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnVaccineRecieved
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.VacinacaoViewModel
 
-class VacinacaoFragment : Fragment() {
+class VacinacaoFragment : Fragment(), OnVaccineRecieved {
 
     private lateinit var viewModel: VacinacaoViewModel
 
@@ -21,10 +23,20 @@ class VacinacaoFragment : Fragment() {
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
+    override fun onStart() {
+        viewModel.registerListener(this)
+        viewModel.onStartVaccine()
+        super.onStart()
+    }
+
+    override fun onDestroy() {
+        viewModel.unregisterListener()
+        super.onDestroy()
+    }
+
+    override fun onVaccineRecieved(value: Vacinas?) {
         val waarning = view?.findViewById<TextView>(R.id.TextView01)
         DangerChanger.setToUnknown(waarning!!, activity!!)
-        super.onActivityCreated(savedInstanceState)
 
         val card: TextView = view!!.findViewById(R.id.confirmados)
         val cardstr = getString(R.string.totalvacinas) + viewModel.onLoadCardBuilder()

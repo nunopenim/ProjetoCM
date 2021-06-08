@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import com.github.mikephil.charting.charts.BarChart
+import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
+import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnDataRecieved
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.DashboardViewModel
 
 
-class DashboardFragment : Fragment() {
+class DashboardFragment : Fragment(), OnDataRecieved {
 
     private lateinit var viewModel: DashboardViewModel
 
@@ -22,9 +24,18 @@ class DashboardFragment : Fragment() {
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onStart() {
+        viewModel.registerListener(this)
+        viewModel.onStartDashboard()
+        super.onStart()
+    }
 
+    override fun onDestroy() {
+        viewModel.unregisterListener()
+        super.onDestroy()
+    }
+
+    override fun onDataRecieved(value: Data?) {
         val waarning = view?.findViewById<TextView>(R.id.TextView01)
         DangerChanger.setToDangerous(waarning!!, activity!!)
 
@@ -50,5 +61,4 @@ class DashboardFragment : Fragment() {
         chart.xAxis.setDrawLabels(false)
         chart.description.text = ""
     }
-
 }

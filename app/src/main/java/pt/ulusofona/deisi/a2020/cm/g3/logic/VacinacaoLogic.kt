@@ -4,8 +4,6 @@ import android.graphics.Color
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import pt.ulusofona.deisi.a2020.cm.g3.R
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.FakeAPI
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Vacinas
 
 class VacinacaoLogic {

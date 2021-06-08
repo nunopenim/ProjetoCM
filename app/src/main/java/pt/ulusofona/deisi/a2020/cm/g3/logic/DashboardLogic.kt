@@ -5,7 +5,6 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.FakeAPI
 
 class DashboardLogic {
 

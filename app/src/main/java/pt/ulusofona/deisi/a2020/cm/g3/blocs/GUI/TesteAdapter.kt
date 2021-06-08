@@ -1,6 +1,5 @@
 package pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

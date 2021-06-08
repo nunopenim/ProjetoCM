@@ -23,7 +23,7 @@ class VacinacaoFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         val waarning = view?.findViewById<TextView>(R.id.TextView01)
-        DangerChanger.setToModerate(waarning!!, activity!!)
+        DangerChanger.setToUnknown(waarning!!, activity!!)
         super.onActivityCreated(savedInstanceState)
 
         val card: TextView = view!!.findViewById(R.id.confirmados)

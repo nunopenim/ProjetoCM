@@ -26,7 +26,7 @@ class ListaTestesFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         val waarning = view?.findViewById<TextView>(R.id.TextView01)
-        DangerChanger.setToDangerous(waarning!!, activity!!)
+        DangerChanger.setToUnknown(waarning!!, activity!!)
 
         super.onActivityCreated(savedInstanceState)
         val crescente : Button? = view?.findViewById(R.id.crescente)

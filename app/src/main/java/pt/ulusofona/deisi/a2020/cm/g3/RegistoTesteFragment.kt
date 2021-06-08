@@ -54,9 +54,9 @@ class RegistoTesteFragment : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        val waarning = view?.findViewById<TextView>(R.id.TextView01)
-        DangerChanger.setToModerate(waarning!!, activity!!)
         super.onActivityCreated(savedInstanceState)
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
+        DangerChanger.setToUnknown(waarning!!, activity!!)
         val local: TextView = view!!.findViewById(R.id.local)
         val dataTeste: TextView = view!!.findViewById(R.id.data)
         val dropdown: Spinner = view!!.findViewById(R.id.result_spinner)

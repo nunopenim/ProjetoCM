@@ -27,5 +27,10 @@ class DangerChanger {
             tview.setTextColor(Color.BLACK)
             tview.setBackgroundColor(Color.rgb(102,205,170))
         }
+        fun setToUnknown(tview: TextView, activity: Activity) {
+            tview.text = activity.getString(R.string.unknown)
+            tview.setTextColor(Color.BLACK)
+            tview.setBackgroundColor(Color.rgb(211, 211, 211))
+        }
     }
 }

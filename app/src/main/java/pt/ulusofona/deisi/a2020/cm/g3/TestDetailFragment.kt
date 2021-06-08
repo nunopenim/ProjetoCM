@@ -25,7 +25,7 @@ class TestDetailFragment(uuid: String) : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?){
         val waarning = view?.findViewById<TextView>(R.id.TextView01)
-        DangerChanger.setToModerate(waarning!!, activity!!)
+        DangerChanger.setToUnknown(waarning!!, activity!!)
         super.onActivityCreated(savedInstanceState)
         val teste = viewModel.loadTeste(uud)
         val local_intent = teste.local

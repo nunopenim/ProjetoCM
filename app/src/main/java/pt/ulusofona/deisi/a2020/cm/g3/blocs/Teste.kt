@@ -1,7 +1,6 @@
 package pt.ulusofona.deisi.a2020.cm.g3.blocs
 
 import android.graphics.Bitmap
-import android.util.Log
 import pt.ulusofona.deisi.a2020.cm.g3.data.entities.Test
 import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat

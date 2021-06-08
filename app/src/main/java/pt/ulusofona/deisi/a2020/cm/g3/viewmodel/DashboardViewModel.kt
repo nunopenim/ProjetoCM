@@ -13,8 +13,8 @@ import pt.ulusofona.deisi.a2020.cm.g3.remote.DataObtainer
 class DashboardViewModel : ViewModel() {
     private val logic: DashboardLogic = DashboardLogic()
     private var listener: OnDataRecieved? = null
-    var data = Data("", "",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-    private var data_IO = Data("", "",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    var data = Data("", "",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0, 0, 0)
+    private var data_IO = Data("", "",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0, 0,0)
 
     fun onLoadCardBuilder() : Array<String> {
         return arrayOf(logic.getConfirmedStr(data), logic.getRecoveredStr(data), logic.getInternatedStr(data), logic.getDeathsStr(data))

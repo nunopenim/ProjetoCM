@@ -9,19 +9,31 @@ import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
 class DashboardLogic {
 
     fun getConfirmedStr(data: Data) : String {
-        return "" + data.confirmados
+        if (data.confirmados_novos > 0) {
+            return "" + data.confirmados + " (+" + data.confirmados_novos + ")"
+        }
+        return "" + data.confirmados + " (" + data.confirmados_novos + ")"
     }
 
     fun getRecoveredStr(data: Data) : String {
-        return "" + data.recuperados
+        if (data.recuperados_new!! > 0) {
+            return "" + data.recuperados + " (+" + data.recuperados_new!! + ")"
+        }
+        return "" + data.recuperados + " (" + data.recuperados_new!! + ")"
     }
 
     fun getDeathsStr(data: Data) : String {
-        return "" + data.obitos
+        if (data.obitos_new!! > 0) {
+            return "" + data.obitos + " (+" + data.obitos_new + ")"
+        }
+        return "" + data.obitos + " (" + data.obitos_new + ")"
     }
 
     fun getInternatedStr(data: Data) : String {
-        return "" + data.internados
+        if (data.internados_new!! > 0) {
+            return "" + data.internados + " (+" + data.internados_new + ")"
+        }
+        return "" + data.internados + " (" + data.internados_new + ")"
     }
 
     fun buildBarChart(data: Data) : BarData {

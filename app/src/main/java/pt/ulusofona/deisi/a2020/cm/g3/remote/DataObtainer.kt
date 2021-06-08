@@ -1,9 +1,5 @@
 package pt.ulusofona.deisi.a2020.cm.g3.remote
 
-import android.util.Log
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Vacinas
 import pt.ulusofona.deisi.a2020.cm.g3.blocs.SysTools

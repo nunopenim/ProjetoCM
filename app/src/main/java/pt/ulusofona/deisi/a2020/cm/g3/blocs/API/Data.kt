@@ -10,7 +10,7 @@ class Data (var data: String, var data_dados: String, var confirmados: Int, var 
             var confirmados_40_49f: Int?, var confirmados_40_49m: Int?, var confirmados_50_59f: Int?,
             var confirmados_50_59m: Int?, var confirmados_60_69f: Int?, var confirmados_60_69m: Int?,
             var confirmados_70_79f: Int?, var confirmados_70_79m: Int?, var confirmados_80f: Int?,
-            var confirmados_80m: Int?){
+            var confirmados_80m: Int?, var obitos_new: Int?, var recuperados_new: Int?, var internados_new: Int?){
 
     fun confirmados_female() : Array<Int?> {
         return arrayOf(confirmados_0_9f, confirmados_10_19f, confirmados_20_29f, confirmados_30_39f, confirmados_40_49f, confirmados_50_59f, confirmados_60_69f, confirmados_70_79f, confirmados_80f)

@@ -13,5 +13,12 @@ class SysTools {
             cal.add(Calendar.DATE, -amount)
             return sdf.format(cal.time)
         }
+        fun getCurrentDateNumber(currentDateString: String) : Long {
+            val sdf = SimpleDateFormat("dd-MM-yyyy")
+            val dateFromCurrent: Date = sdf.parse(currentDateString)
+            val cal = GregorianCalendar()
+            cal.time = dateFromCurrent
+            return cal.timeInMillis
+        }
     }
 }

@@ -45,7 +45,13 @@ class DadosRepository(private val local: DataDao) {
             data = IO_data
             notifyOnDataLoaded()
             if(ableToLoad) {
-                local.update(IO_data.convertToDataDb())
+                val obj = local.getLatest("1")
+                if (obj != null) {
+                    local.update(IO_data.convertToDataDb())
+                }
+                else {
+                    local.insert(IO_data.convertToDataDb())
+                }
             }
         }
     }

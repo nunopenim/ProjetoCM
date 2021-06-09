@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.a2020.cm.g3.data.repositories
 
+import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -45,7 +46,13 @@ class VacinasRepository(private val local: VacinaDao) {
             vacinas = vacinas_IO
             notifyOnDataLoaded()
             if(ableToLoad) {
-                local.update(vacinas.convertToVacinaDb())
+                val obj = local.getLatest("1")
+                if (obj != null) {
+                    local.update(vacinas.convertToVacinaDb())
+                }
+                else {
+                    local.insert(vacinas.convertToVacinaDb())
+                }
             }
         }
     }

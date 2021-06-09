@@ -1,5 +1,7 @@
 package pt.ulusofona.deisi.a2020.cm.g3.blocs.API
 
+import pt.ulusofona.deisi.a2020.cm.g3.data.entities.DataDb
+
 class Data (var data: String, var data_dados: String, var confirmados: Int, var confirmados_norte: Int,
             var confirmados_centro: Int, var confirmados_lvt: Int, var confirmados_alentejo: Int,
             var confirmados_algarve: Int, var confirmados_acores: Int, var confirmados_madeira: Int,
@@ -52,6 +54,15 @@ class Data (var data: String, var data_dados: String, var confirmados: Int, var 
             }
         }
         return max
+    }
+
+    fun isEmpty() : Boolean{
+        if(data == "" && data_dados == "") return true
+        return false
+    }
+
+    fun convertToDataDb() : DataDb {
+        return DataDb(data, data_dados, confirmados, confirmados_norte, confirmados_centro, confirmados_lvt, confirmados_alentejo, confirmados_algarve, confirmados_acores, confirmados_madeira, confirmados_novos, recuperados, obitos, internados, internados_UCI, confirmados_0_9f,  confirmados_0_9m, confirmados_10_19f, confirmados_10_19m, confirmados_20_29f, confirmados_20_29m, confirmados_30_39f, confirmados_30_39m,confirmados_40_49f,confirmados_40_49m,confirmados_50_59f,confirmados_50_59m,confirmados_60_69f,confirmados_60_69m,confirmados_70_79f,confirmados_70_79m,confirmados_80f,confirmados_80m,obitos_new, recuperados_new, internados_new)
     }
 
     //falta: taxa de sintomas, métodos

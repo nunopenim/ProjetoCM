@@ -25,11 +25,13 @@ class VacinacaoFragment : Fragment(), OnVaccineRecieved {
 
     override fun onStart() {
         viewModel.registerListener(this)
+        viewModel.onLoad()
         viewModel.onStartVaccine()
         super.onStart()
     }
 
     override fun onDestroy() {
+        viewModel.onUnload()
         viewModel.unregisterListener()
         super.onDestroy()
     }

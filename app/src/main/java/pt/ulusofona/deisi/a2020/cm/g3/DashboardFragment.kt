@@ -26,12 +26,14 @@ class DashboardFragment : Fragment(), OnDataRecieved {
 
     override fun onStart() {
         viewModel.registerListener(this)
+        viewModel.onLoad()
         viewModel.onStartDashboard()
         super.onStart()
     }
 
     override fun onDestroy() {
         viewModel.unregisterListener()
+        viewModel.onUnload()
         super.onDestroy()
     }
 

@@ -8,7 +8,7 @@ import com.google.android.gms.location.*
 
 class FusedLocation private constructor(context: Context) : LocationCallback() {
     private val TAG = FusedLocation::class.java.simpleName
-    private val TIME_BETWEEN_UPDATES = 60 * 1000L // Verificamos a cada 60 segundos, para poupar na bateria
+    private val TIME_BETWEEN_UPDATES = 60 * 1000L // 60 segundos acho
     private var locationRequest: LocationRequest? = null
     private var client = FusedLocationProviderClient(context)
 

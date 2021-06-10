@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.a2020.cm.g3.data.remote
 
+import android.util.Log
 import pt.ulusofona.deisi.a2020.cm.g3.extra.Data
 import pt.ulusofona.deisi.a2020.cm.g3.extra.Vacinas
 import pt.ulusofona.deisi.a2020.cm.g3.extra.SysTools
@@ -33,10 +34,6 @@ class DataObtainer {
             return data
         }
 
-        suspend fun getDistritoRisk(distrito: String) {
-
-        }
-
         private suspend fun fetchData() : Data {
             val service = RetrofitBuilder.getInstace(API_URL).create(TodayEntry::class.java)
             val response = service.fetchLatest()
@@ -44,6 +41,25 @@ class DataObtainer {
                 return response.body()!!.toDataObject()
             }
             return Data("", "", 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0, 0, 0)
+        }
+
+        suspend fun getDistritoRisk(distrito: String) : Int{
+            val service = RetrofitBuilder.getInstace(API_URL).create(TodayEntry::class.java)
+            val response = service.getCounty(distrito)
+            val risco = response[0].incidencia_risco
+            if (risco == "Baixo a Moderado") {
+                return 0
+            }
+            if (risco == "Moderado") {
+                return 1
+            }
+            if (risco == "Elevado") {
+                return 2
+            }
+            if (risco == "Extremamente Elevado") {
+                return 3
+            }
+            return -1
         }
     }
 }

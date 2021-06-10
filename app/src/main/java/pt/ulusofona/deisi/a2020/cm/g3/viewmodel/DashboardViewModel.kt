@@ -2,18 +2,16 @@ package pt.ulusofona.deisi.a2020.cm.g3.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import com.github.mikephil.charting.data.BarData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Data
 import pt.ulusofona.deisi.a2020.cm.g3.data.DataDatabase
 import pt.ulusofona.deisi.a2020.cm.g3.data.repositories.DadosRepository
 import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnDataRecieved
 import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnDataRepositoryLoad
 import pt.ulusofona.deisi.a2020.cm.g3.logic.DashboardLogic
-import pt.ulusofona.deisi.a2020.cm.g3.remote.DataObtainer
 
 class DashboardViewModel(application: Application) : AndroidViewModel(application), OnDataRepositoryLoad  {
     private val storage = DataDatabase.getInstance(application).dataDao()

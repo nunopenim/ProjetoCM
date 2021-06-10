@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI
+package pt.ulusofona.deisi.a2020.cm.g3.extra
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import pt.ulusofona.deisi.a2020.cm.g3.R
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
 
 class TesteAdapter (var testList: List<Teste>) : RecyclerView.Adapter<TesteAdapter.TesteViewHolder>() {
 

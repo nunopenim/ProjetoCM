@@ -1,13 +1,12 @@
 package pt.ulusofona.deisi.a2020.cm.g3.data.repositories
 
-import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Vacinas
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Vacinas
 import pt.ulusofona.deisi.a2020.cm.g3.data.dao.VacinaDao
 import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnVaccineRepositoryLoad
-import pt.ulusofona.deisi.a2020.cm.g3.remote.DataObtainer
+import pt.ulusofona.deisi.a2020.cm.g3.data.remote.DataObtainer
 import java.lang.Exception
 
 class VacinasRepository(private val local: VacinaDao) {

@@ -1,6 +1,6 @@
-package pt.ulusofona.deisi.a2020.cm.g3.remote.responses
+package pt.ulusofona.deisi.a2020.cm.g3.data.remote.responses
 
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Vacinas
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Vacinas
 
 class VaccineResponse(var Data: Long, var Inoculacao1: Long, var Inoculacao1_Ac: Long, var Inoculacao2: Long,
                         var Inoculacao2_Ac: Long, var Vacinados: Long, var Vacinados_Ac: Long) {

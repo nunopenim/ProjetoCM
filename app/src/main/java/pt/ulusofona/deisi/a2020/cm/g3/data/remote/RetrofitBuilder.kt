@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g3.remote
+package pt.ulusofona.deisi.a2020.cm.g3.data.remote
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import retrofit2.Retrofit

@@ -1,6 +1,6 @@
-package pt.ulusofona.deisi.a2020.cm.g3.remote.responses
+package pt.ulusofona.deisi.a2020.cm.g3.data.remote.responses
 
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Data
 
 class EntryResponse(var data: String, var data_dados: String, var confirmados: Int, var confirmados_arsnorte: Int,
                     var confirmados_arscentro: Int, var confirmados_arslvt: Int, var confirmados_arsalentejo: Int,

@@ -3,7 +3,7 @@ package pt.ulusofona.deisi.a2020.cm.g3.data.entities
 import android.graphics.BitmapFactory
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Teste
 import java.util.*
 
 @Entity

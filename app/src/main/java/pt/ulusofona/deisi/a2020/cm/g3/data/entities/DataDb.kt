@@ -2,7 +2,7 @@ package pt.ulusofona.deisi.a2020.cm.g3.data.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Data
 
 @Entity
 data class DataDb(var data: String, var data_dados: String, var confirmados: Int, var confirmados_norte: Int,

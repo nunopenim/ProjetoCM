@@ -2,18 +2,16 @@ package pt.ulusofona.deisi.a2020.cm.g3.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import com.github.mikephil.charting.data.PieData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Vacinas
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Vacinas
 import pt.ulusofona.deisi.a2020.cm.g3.data.VacinaDatabase
 import pt.ulusofona.deisi.a2020.cm.g3.data.repositories.VacinasRepository
 import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnVaccineRecieved
 import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnVaccineRepositoryLoad
 import pt.ulusofona.deisi.a2020.cm.g3.logic.VacinacaoLogic
-import pt.ulusofona.deisi.a2020.cm.g3.remote.DataObtainer
 
 class VacinacaoViewModel(application: Application) : AndroidViewModel(application), OnVaccineRepositoryLoad {
     private val storage = VacinaDatabase.getInstance(application).vacinaDao()

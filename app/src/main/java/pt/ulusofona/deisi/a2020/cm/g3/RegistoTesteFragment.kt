@@ -20,7 +20,7 @@ import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.button.MaterialButton
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
+import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.RegistoTesteViewModel
 import java.io.File
 import java.text.SimpleDateFormat

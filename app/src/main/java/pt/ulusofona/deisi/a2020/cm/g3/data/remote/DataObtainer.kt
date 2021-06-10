@@ -1,10 +1,10 @@
-package pt.ulusofona.deisi.a2020.cm.g3.remote
+package pt.ulusofona.deisi.a2020.cm.g3.data.remote
 
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Vacinas
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.SysTools
-import pt.ulusofona.deisi.a2020.cm.g3.remote.services.TodayEntry
-import pt.ulusofona.deisi.a2020.cm.g3.remote.services.VaccineEntry
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Data
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Vacinas
+import pt.ulusofona.deisi.a2020.cm.g3.extra.SysTools
+import pt.ulusofona.deisi.a2020.cm.g3.data.remote.services.TodayEntry
+import pt.ulusofona.deisi.a2020.cm.g3.data.remote.services.VaccineEntry
 
 class DataObtainer {
     companion object {
@@ -33,7 +33,7 @@ class DataObtainer {
             return data
         }
 
-        private suspend fun fetchData() : Data{
+        private suspend fun fetchData() : Data {
             val service = RetrofitBuilder.getInstace(API_URL).create(TodayEntry::class.java)
             val response = service.fetchLatest()
             if(response.isSuccessful) {

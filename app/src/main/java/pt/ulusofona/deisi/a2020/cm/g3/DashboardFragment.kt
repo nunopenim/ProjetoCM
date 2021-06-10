@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import com.github.mikephil.charting.charts.BarChart
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Data
+import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnDataRecieved
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.DashboardViewModel
 

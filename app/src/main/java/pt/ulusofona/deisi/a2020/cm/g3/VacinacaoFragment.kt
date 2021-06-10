@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import com.github.mikephil.charting.charts.PieChart
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Vacinas
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Vacinas
+import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnVaccineRecieved
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.VacinacaoViewModel
 

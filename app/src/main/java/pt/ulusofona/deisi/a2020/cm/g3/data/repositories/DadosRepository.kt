@@ -3,10 +3,10 @@ package pt.ulusofona.deisi.a2020.cm.g3.data.repositories
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.API.Data
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Data
 import pt.ulusofona.deisi.a2020.cm.g3.data.dao.DataDao
 import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnDataRepositoryLoad
-import pt.ulusofona.deisi.a2020.cm.g3.remote.DataObtainer
+import pt.ulusofona.deisi.a2020.cm.g3.data.remote.DataObtainer
 import java.lang.Exception
 
 class DadosRepository(private val local: DataDao) {

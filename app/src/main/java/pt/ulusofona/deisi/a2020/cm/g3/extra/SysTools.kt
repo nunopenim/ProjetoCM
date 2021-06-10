@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g3.blocs
+package pt.ulusofona.deisi.a2020.cm.g3.extra
 
 import java.text.SimpleDateFormat
 import java.util.*

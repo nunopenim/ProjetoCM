@@ -1,6 +1,6 @@
-package pt.ulusofona.deisi.a2020.cm.g3.remote.services
+package pt.ulusofona.deisi.a2020.cm.g3.data.remote.services
 
-import pt.ulusofona.deisi.a2020.cm.g3.remote.responses.VaccineResponse
+import pt.ulusofona.deisi.a2020.cm.g3.data.remote.responses.VaccineResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

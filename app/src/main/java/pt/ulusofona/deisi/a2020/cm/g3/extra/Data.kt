@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g3.blocs.API
+package pt.ulusofona.deisi.a2020.cm.g3.extra
 
 import pt.ulusofona.deisi.a2020.cm.g3.data.entities.DataDb
 

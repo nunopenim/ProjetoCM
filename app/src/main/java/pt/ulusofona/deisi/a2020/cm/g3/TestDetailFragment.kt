@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.DangerChanger
+import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.TestDetailViewModel
 
 class TestDetailFragment(uuid: String) : Fragment() {

@@ -2,8 +2,8 @@ package pt.ulusofona.deisi.a2020.cm.g3.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI.TesteAdapter
-import pt.ulusofona.deisi.a2020.cm.g3.blocs.Teste
+import pt.ulusofona.deisi.a2020.cm.g3.extra.TesteAdapter
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Teste
 import pt.ulusofona.deisi.a2020.cm.g3.data.TestsDatabase
 import pt.ulusofona.deisi.a2020.cm.g3.logic.ListaTestesLogic
 

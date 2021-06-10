@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g3.blocs.GUI
+package pt.ulusofona.deisi.a2020.cm.g3.extra
 
 import android.app.Activity
 import android.graphics.Color

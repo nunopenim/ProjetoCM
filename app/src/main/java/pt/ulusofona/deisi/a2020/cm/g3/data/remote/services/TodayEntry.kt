@@ -2,6 +2,7 @@ package pt.ulusofona.deisi.a2020.cm.g3.data.remote.services
 
 import com.google.gson.internal.LinkedTreeMap
 import pt.ulusofona.deisi.a2020.cm.g3.data.remote.responses.EntryResponse
+import pt.ulusofona.deisi.a2020.cm.g3.data.remote.responses.RiskResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -15,5 +16,5 @@ interface TodayEntry {
     suspend fun fetchEntry(@Path(value="date") date: String): LinkedTreeMap<String, LinkedTreeMap<Any, Any>>
 
     @GET("/Requests/get_last_update_specific_county/{county}")
-    suspend fun getCounty(@Path(value="county") county: String): LinkedTreeMap<String, LinkedTreeMap<Any, Any>>
+    suspend fun getCounty(@Path(value="county") county: String): Array<RiskResponse>
 }

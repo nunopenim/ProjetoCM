@@ -9,6 +9,10 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import pt.ulusofona.deisi.a2020.cm.g3.data.remote.DataObtainer
 import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.FusedLocation
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {

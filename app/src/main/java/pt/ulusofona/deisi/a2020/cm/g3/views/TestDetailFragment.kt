@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g3
+package pt.ulusofona.deisi.a2020.cm.g3.views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
+import pt.ulusofona.deisi.a2020.cm.g3.NavigationManager
+import pt.ulusofona.deisi.a2020.cm.g3.R
 import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.TestDetailViewModel
 

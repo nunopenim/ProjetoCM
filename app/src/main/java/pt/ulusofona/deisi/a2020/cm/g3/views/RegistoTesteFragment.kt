@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g3
+package pt.ulusofona.deisi.a2020.cm.g3.views
 
 import android.app.Activity
 import android.app.DatePickerDialog
@@ -20,6 +20,8 @@ import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.button.MaterialButton
+import pt.ulusofona.deisi.a2020.cm.g3.NavigationManager
+import pt.ulusofona.deisi.a2020.cm.g3.R
 import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.RegistoTesteViewModel
 import java.io.File

@@ -3,6 +3,7 @@ package pt.ulusofona.deisi.a2020.cm.g3
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.TestDetailViewModel
+import pt.ulusofona.deisi.a2020.cm.g3.views.*
 
 abstract class NavigationManager {
     companion object {

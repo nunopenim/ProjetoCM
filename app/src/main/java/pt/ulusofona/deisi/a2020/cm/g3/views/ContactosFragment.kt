@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g3
+package pt.ulusofona.deisi.a2020.cm.g3.views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import pt.ulusofona.deisi.a2020.cm.g3.R
 import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
 
 class ContactosFragment : Fragment() {

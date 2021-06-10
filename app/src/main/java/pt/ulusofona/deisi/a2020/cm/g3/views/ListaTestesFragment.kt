@@ -1,4 +1,4 @@
-package pt.ulusofona.deisi.a2020.cm.g3
+package pt.ulusofona.deisi.a2020.cm.g3.views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
+import pt.ulusofona.deisi.a2020.cm.g3.NavigationManager
+import pt.ulusofona.deisi.a2020.cm.g3.R
 import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.ListaTestesViewModel
 

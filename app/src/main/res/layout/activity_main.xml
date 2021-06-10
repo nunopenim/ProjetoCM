@@ -42,7 +42,7 @@
     <FrameLayout
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        tools:context=".DashboardFragment"
+        tools:context=".views.DashboardFragment"
         android:id="@+id/frame">
     </FrameLayout>
 

@@ -21,12 +21,21 @@ import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.OnLocationChangedLis
 import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
 import pt.ulusofona.deisi.a2020.cm.g3.extra.GlobalRisk
 import pt.ulusofona.deisi.a2020.cm.g3.extra.RiskObtainer
+import pt.ulusofona.deisi.a2020.cm.g3.extra.TesteAdapter
+import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnTestListToView
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.ListaTestesViewModel
 import java.util.*
 
-class ListaTestesFragment : PermissionsFragment(100), OnLocationChangedListener {
+class ListaTestesFragment : PermissionsFragment(100), OnLocationChangedListener, OnTestListToView {
 
     private lateinit var viewModel: ListaTestesViewModel
+
+    lateinit var crescente : Button
+    lateinit var decrescente : Button
+
+    lateinit var rv : RecyclerView
+    lateinit var relative_rv : RelativeLayout
+    lateinit var emptyList : TextView
 
     override fun onLocationChanged(locationResult: LocationResult) {
         val location = locationResult.lastLocation
@@ -67,39 +76,45 @@ class ListaTestesFragment : PermissionsFragment(100), OnLocationChangedListener 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_lista_testes, container, false)
         viewModel = ViewModelProviders.of(this).get(ListaTestesViewModel::class.java)
+        viewModel.onLoadAdapter()
+        crescente = view?.findViewById(R.id.crescente)!!
+        decrescente = view?.findViewById(R.id.decrescente)
+        rv = view?.findViewById(R.id.recycler_testes)
+        relative_rv = view?.findViewById(R.id.relative_recycler)
+        emptyList = view?.findViewById(R.id.emptyList)
         return view
     }
 
     override fun onStart() {
         super.onStart()
-        val crescente : Button? = view?.findViewById(R.id.crescente)
-        val decrescente : Button? = view?.findViewById(R.id.decrescente)
+        viewModel.registerListener(this)
+        drawRisk()
+    }
 
-        val rv : RecyclerView? = view?.findViewById(R.id.recycler_testes)
-        val relative_rv : RelativeLayout? = view?.findViewById(R.id.relative_recycler)
-        val emptyList : TextView? = view?.findViewById(R.id.emptyList)
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.unregisterListener()
+        viewModel.onUnload()
+    }
 
-        val testeAdapter  = viewModel.onLoadAdapter()
-        if (viewModel.getList().isNotEmpty()) {
-            relative_rv?.visibility = View.VISIBLE
-            emptyList?.visibility = View.GONE
+    override fun onTestListToView(adapter: TesteAdapter) {
+        if (adapter.testList.isNotEmpty()) {
+            relative_rv.visibility = View.VISIBLE
+            emptyList.visibility = View.GONE
         }
-        rv?.adapter = testeAdapter
-
-        // https://stackoverflow.com/questions/3913592/start-an-activity-with-a-parameter :)
-        testeAdapter.onItemClick = {teste ->
+        rv.adapter = adapter
+        adapter.onItemClick = { teste ->
             NavigationManager.testDetail(activity!!.supportFragmentManager, teste.uuid)
         }
-        crescente!!.setOnClickListener {
+        crescente.setOnClickListener {
             viewModel.orderCrescente()
             val toast = Toast.makeText(activity, getString(R.string.ordenado_crescente), Toast.LENGTH_SHORT)
             toast.show()
         }
-        decrescente!!.setOnClickListener {
+        decrescente.setOnClickListener {
             viewModel.orderDecrescente()
             val toast = Toast.makeText(activity, getString(R.string.ordenado_decrescente), Toast.LENGTH_SHORT)
             toast.show()
         }
-        drawRisk()
     }
 }

@@ -58,4 +58,6 @@
     <string name="first_doses">1st doses</string>
     <string name="second_doses">2nd doses</string>
     <string name="last_24">Last 24 hours in Portugal</string>
+
+    <string name="lowbat">Dark Mode applied, low battery detected!</string>
 </resources>

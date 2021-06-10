@@ -14,11 +14,9 @@ class Battery private constructor(private val context: Context) : Runnable{
     private val TAG = Battery::class.java.simpleName
     private val TIME_BETWEEN_UPDATES = 15 * 1000L
 
-    private var hasStarted = false
-    private var isDark = false
-
     companion object{
         private var instance: Battery? = null
+        var current = 0f
         private var currentListener: OnBatteryCurrentListener? = null
         private val handler = Handler()
         fun start (context: Context, onBatteryCurrentListener: OnBatteryCurrentListener){
@@ -50,26 +48,8 @@ class Battery private constructor(private val context: Context) : Runnable{
     }
 
     override fun run() {
-        if (!hasStarted) {
-            val nightModeFlags = context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-            when (nightModeFlags) {
-                Configuration.UI_MODE_NIGHT_YES -> isDark = true
-                Configuration.UI_MODE_NIGHT_NO -> isDark = false
-                Configuration.UI_MODE_NIGHT_UNDEFINED -> isDark = false
-            }
-            hasStarted = true
-        }
-
-        val current = batteryLevel()
-        if(!isDark) {
-            if(current < 20) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }
-            else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-        }
-        Log.i("BatteryLevel", current.toString())
+        current = batteryLevel()
+        currentListener?.onCurrentChanged(current)
         handler.postDelayed(this,TIME_BETWEEN_UPDATES)
     }
 }

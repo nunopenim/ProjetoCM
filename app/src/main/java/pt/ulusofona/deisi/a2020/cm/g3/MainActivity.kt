@@ -1,9 +1,11 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
 import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
@@ -13,10 +15,12 @@ import com.google.android.material.navigation.NavigationView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import pt.ulusofona.deisi.a2020.cm.g3.data.battery.Battery
+import pt.ulusofona.deisi.a2020.cm.g3.data.battery.OnBatteryCurrentListener
 import pt.ulusofona.deisi.a2020.cm.g3.data.remote.DataObtainer
 import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.FusedLocation
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelectedListener, OnBatteryCurrentListener {
 
     lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
@@ -24,6 +28,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Battery.start(this, this)
         FusedLocation.start(this)
         setContentView(R.layout.activity_main)
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT; // bloqueado na rotação because yes
@@ -84,4 +89,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    override fun onCurrentChanged (current: Float){
+        if(current < 20) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            val toast = Toast.makeText(this, getString(R.string.lowbat), Toast.LENGTH_LONG)
+            toast.show()
+        }
+    }
 }

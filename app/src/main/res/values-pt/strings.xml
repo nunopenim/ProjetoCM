@@ -59,4 +59,6 @@
     <string name="first_doses">1ª doses</string>
     <string name="second_doses">2ª doses</string>
     <string name="last_24">Últimas 24 horas em Portugal</string>
+
+    <string name="lowbat">Dark Mode aplicado! Bateria fraca!</string>
 </resources>

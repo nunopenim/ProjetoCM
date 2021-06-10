@@ -88,8 +88,8 @@ class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationCh
         val location = locationResult.lastLocation
         val gcd = Geocoder(activity?.baseContext!!, Locale.getDefault())
         val addresses: List<Address> = gcd.getFromLocation(location.latitude, location.longitude, 1)
-        val localizacao = addresses[0].locality
-
+        val localizacao = addresses[0].adminArea
+        Log.i("Terrinha da Pessoa", localizacao)
     }
 
 }

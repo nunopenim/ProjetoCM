@@ -35,25 +35,17 @@
         android:textSize="18sp"
         android:visibility="invisible" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/smartphone" />
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="20dp">
+        android:layout_height="wrap_content"
+
+        android:columnCount="2">
 
         <EditText
             android:id="@+id/local"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="239dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/border"
             android:hint="@string/test_place"
@@ -62,84 +54,91 @@
             android:paddingEnd="5dp" />
 
         <TextView
+            style="@style/Theme.Input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="7dp"
-            style="@style/Theme.Input"
             android:drawableLeft="@drawable/ic_baseline_place_24"
             android:text="@string/test_place"
 
             />
+
+        <RelativeLayout
+            android:layout_width="342dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="350dp"
+            android:layout_marginRight="20dp">
+            <!-- https://stackoverflow.com/questions/14933330/datepicker-how-to-popup-datepicker-when-click-on-edittext -->
+
+            <EditText
+                android:id="@+id/data"
+                android:layout_width="240dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/test_date"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp" />
+
+            <TextView
+                style="@style/Theme.Input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:drawableLeft="@drawable/ic_baseline_date_range_24"
+                android:text="@string/test_date"
+
+                />
+        </RelativeLayout>
     </RelativeLayout>
+    <TextView
+        style="@style/Theme.Input"
+        android:layout_width="205dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/test_result" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp">
-        <!-- https://stackoverflow.com/questions/14933330/datepicker-how-to-popup-datepicker-when-click-on-edittext -->
-        <EditText
-            android:id="@+id/data"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/border"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:hint="@string/test_date"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:columnCount="2">
 
-        <TextView
+
+        <Spinner
+            android:id="@+id/result_spinner"
+            android:layout_width="247dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="400dp"
+            android:background="@drawable/border"
+            android:columnCount="2"
+            android:spinnerMode="dropdown"
+            app:cornerRadius="160dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/take_foto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="7dp"
-            style="@style/Theme.Input"
-            android:drawableLeft="@drawable/ic_baseline_date_range_24"
-            android:text="@string/test_date"
+            android:layout_marginLeft="400dp"
+            android:layout_marginRight="500dp"
+            android:backgroundTint="#4682B4"
+            android:paddingBottom="2dp"
+            android:text="@string/foto"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/tirar_foto"
+            app:iconGravity="textStart"
+            app:iconTint="@color/white" />
 
-            />
+
     </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        style="@style/Theme.Input"
-        android:text="@string/test_result" />
-
-    <Spinner
-        android:id="@+id/result_spinner"
-        app:cornerRadius="160dp"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/border"
-        android:spinnerMode="dropdown" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/take_foto"
-        app:cornerRadius="60dp"
-        app:icon="@drawable/tirar_foto"
-        app:iconGravity="textStart"
-        app:iconTint="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="80dp"
-        android:backgroundTint="#4682B4"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:text="@string/foto" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/regist_test"
@@ -149,7 +148,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="#4682B4"
         android:paddingTop="20dp"

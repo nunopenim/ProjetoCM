@@ -33,6 +33,10 @@ class DataObtainer {
             return data
         }
 
+        suspend fun getDistritoRisk(distrito: String) {
+
+        }
+
         private suspend fun fetchData() : Data {
             val service = RetrofitBuilder.getInstace(API_URL).create(TodayEntry::class.java)
             val response = service.fetchLatest()

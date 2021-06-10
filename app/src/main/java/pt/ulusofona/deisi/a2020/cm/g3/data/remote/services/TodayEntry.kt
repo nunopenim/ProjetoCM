@@ -13,4 +13,7 @@ interface TodayEntry {
 
     @GET("Requests/get_entry/{date}")
     suspend fun fetchEntry(@Path(value="date") date: String): LinkedTreeMap<String, LinkedTreeMap<Any, Any>>
+
+    @GET("/Requests/get_last_update_specific_county/{county}")
+    suspend fun getCounty(@Path(value="county") county: String): LinkedTreeMap<String, LinkedTreeMap<Any, Any>>
 }

@@ -33,7 +33,6 @@
             android:layout_toEndOf="@+id/image_view"
             android:gravity="top"
             android:text="Place"
-            android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="normal" />
 
@@ -49,7 +48,6 @@
             android:layout_toEndOf="@+id/test_number"
             android:gravity="right"
             android:text="Date"
-            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -64,8 +62,7 @@
             android:layout_marginBottom="8dp"
             android:layout_toEndOf="@+id/image_view"
             android:gravity="top"
-            android:text="Result: "
-            android:textColor="@color/black" />
+            android:text="Result: "/>
 
         <ImageView
             android:id="@+id/image_view2"

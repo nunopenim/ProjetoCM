@@ -5,7 +5,7 @@
     android:id="@+id/TableLayout01"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.RegistoTesteFragment">
+    tools:context=".RegistoTesteFragment">
 
     <TextView
         android:id="@+id/TextView01"
@@ -32,13 +32,12 @@
         android:background="@android:color/holo_blue_dark"
         android:text="@string/taken_photo"
         android:textAlignment="center"
-        android:textColor="#F6F6F6"
         android:textSize="18sp"
         android:visibility="invisible" />
 
     <ImageView
-        android:layout_width="20dp"
-        android:layout_height="91dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -48,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="0dp"
         android:layout_marginRight="20dp">
 
         <EditText
@@ -67,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="7dp"
-            android:background="#ffffff"
+            style="@style/Theme.Input"
             android:drawableLeft="@drawable/ic_baseline_place_24"
             android:text="@string/test_place"
 
@@ -100,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="7dp"
-            android:background="#ffffff"
+            style="@style/Theme.Input"
             android:drawableLeft="@drawable/ic_baseline_date_range_24"
             android:text="@string/test_date"
 
@@ -112,7 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:background="#ffffff"
+        style="@style/Theme.Input"
         android:text="@string/test_result" />
 
     <Spinner

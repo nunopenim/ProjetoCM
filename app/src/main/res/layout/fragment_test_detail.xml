@@ -4,7 +4,7 @@
     android:id="@+id/TableLayout01_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.TestDetailFragment">
+    tools:context=".TestDetailFragment">
 
     <TextView
         android:id="@+id/TextView01"
@@ -50,7 +50,6 @@
         android:layout_marginBottom="10dp"
         android:gravity="start"
         android:text="@string/local"
-        android:textColor="@android:color/black"
         android:textSize="20sp" />
 
     <TextView
@@ -63,7 +62,6 @@
         android:layout_marginBottom="10dp"
         android:gravity="start"
         android:text="@string/data"
-        android:textColor="@android:color/black"
         android:textSize="20sp" />
 
     <TextView
@@ -76,7 +74,6 @@
         android:layout_marginBottom="10dp"
         android:gravity="start"
         android:text="@string/result_neg"
-        android:textColor="@android:color/black"
         android:textSize="20sp" />
 
 </TableLayout>

@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.FusedLocation
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FusedLocation.start(this)
         setContentView(R.layout.activity_main)
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT; // bloqueado na rotação because yes
         NavigationManager.goToDashboard(supportFragmentManager)

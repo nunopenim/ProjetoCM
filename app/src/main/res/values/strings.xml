@@ -14,7 +14,7 @@
     <string name="risky">The area you are in is risky</string>
     <string name="moderate">The area you are in is moderate</string>
     <string name="safe">The area you are in is safe</string>
-    <string name="unknown">Unknown area!</string>
+    <string name="unknown">Unknown area/You are offline</string>
     
     <string name="phone_contacts">Telephonic contacts COVID 19 </string>
     <string name="sns_line_symnptoms">SNS 24 line for symptom tracking and question answering.</string>

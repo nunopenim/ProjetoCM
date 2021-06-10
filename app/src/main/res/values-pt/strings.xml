@@ -15,7 +15,7 @@
     <string name="risky">A zona onde está é insegura</string>
     <string name="moderate">A zona onde está é moderadamente segura</string>
     <string name="safe">A zona onde está é segura</string>
-    <string name="unknown">Zona desconhecida!</string>
+    <string name="unknown">Zona desconhecida/Está offline</string>
 
     <string name="phone_contacts">Contactos telefónicos COVID19 </string>
     <string name="sns_line_symnptoms">Linha SNS 24 para triagem de sintomas e esclarecimento de dúvidas sobre COVID-19.</string>

@@ -6,6 +6,8 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -19,16 +21,21 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.location.LocationResult
 import com.google.android.material.button.MaterialButton
 import pt.ulusofona.deisi.a2020.cm.g3.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g3.R
+import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.FusedLocation
+import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.OnLocationChangedListener
 import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
+import pt.ulusofona.deisi.a2020.cm.g3.extra.GlobalRisk
+import pt.ulusofona.deisi.a2020.cm.g3.extra.RiskObtainer
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.RegistoTesteViewModel
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-class RegistoTesteFragment : Fragment() {
+class RegistoTesteFragment : PermissionsFragment(100), OnLocationChangedListener {
 
     private lateinit var viewModel: RegistoTesteViewModel
 
@@ -49,6 +56,23 @@ class RegistoTesteFragment : Fragment() {
     var m = 0
     var d = 0
 
+    override fun onLocationChanged(locationResult: LocationResult) {
+        val location = locationResult.lastLocation
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
+        val gcd = Geocoder(activity?.baseContext!!, Locale.getDefault())
+        val addresses: List<Address> = gcd.getFromLocation(location.latitude, location.longitude, 1)
+        val localizacao = addresses[0].adminArea
+        val riskObtainer = RiskObtainer(localizacao)
+        riskObtainer.sortRiskStuff(waarning!!, activity!!)
+    }
+
+    override fun onRequestPermissionsSuccess() {
+        FusedLocation.registerListener(this)
+    }
+
+    override fun onRequestPermissionsFailrule() {
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_registo_teste, container, false)
         viewModel = ViewModelProviders.of(this).get(RegistoTesteViewModel::class.java)
@@ -57,8 +81,7 @@ class RegistoTesteFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val waarning = view?.findViewById<TextView>(R.id.TextView01)
-        DangerChanger.setToUnknown(waarning!!, activity!!)
+        drawRisk()
         val local: TextView = view!!.findViewById(R.id.local)
         val dataTeste: TextView = view!!.findViewById(R.id.data)
         val dropdown: Spinner = view!!.findViewById(R.id.result_spinner)
@@ -134,5 +157,24 @@ class RegistoTesteFragment : Fragment() {
     private fun getPhotoFile(fileName: String): File {
         val storagetemp = activity!!.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return createTempFile(fileName, ".jpg", storagetemp)
+    }
+
+    fun drawRisk() {
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
+        if (GlobalRisk.risco == -1) {
+            DangerChanger.setToUnknown(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 0) {
+            DangerChanger.setToSafe(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 1) {
+            DangerChanger.setToModerate(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 2) {
+            DangerChanger.setToRisky(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 3) {
+            DangerChanger.setToDangerous(waarning!!, activity!!)
+        }
     }
 }

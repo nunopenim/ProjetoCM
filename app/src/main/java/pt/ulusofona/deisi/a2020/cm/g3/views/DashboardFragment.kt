@@ -1,26 +1,29 @@
 package pt.ulusofona.deisi.a2020.cm.g3.views
 
+import android.Manifest.permission
+import android.util.Log
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import com.github.mikephil.charting.charts.BarChart
+import com.google.android.gms.location.LocationResult
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.a2020.cm.g3.R
+import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.FusedLocation
 import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.OnLocationChangedListener
-import pt.ulusofona.deisi.a2020.cm.g3.extra.Data
 import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
+import pt.ulusofona.deisi.a2020.cm.g3.extra.Data
+import pt.ulusofona.deisi.a2020.cm.g3.extra.GlobalRisk
+import pt.ulusofona.deisi.a2020.cm.g3.extra.RiskObtainer
 import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnDataRecieved
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.DashboardViewModel
-import java.util.jar.Manifest
-import android.Manifest.permission
-import android.location.Address
-import android.location.Geocoder
-import android.util.Log
-import com.google.android.gms.location.LocationResult
-import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.FusedLocation
 import java.util.*
 
 
@@ -28,15 +31,30 @@ class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationCh
 
     private lateinit var viewModel: DashboardViewModel
 
-    override fun onRequestPermissionsSuccess() {
+    fun drawRisk() {
         val waarning = view?.findViewById<TextView>(R.id.TextView01)
-        DangerChanger.setToUnknown(waarning!!, activity!!)
+        if (GlobalRisk.risco == -1) {
+            DangerChanger.setToUnknown(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 0) {
+            DangerChanger.setToSafe(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 1) {
+            DangerChanger.setToModerate(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 2) {
+            DangerChanger.setToRisky(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 3) {
+            DangerChanger.setToDangerous(waarning!!, activity!!)
+        }
+    }
+
+    override fun onRequestPermissionsSuccess() {
         FusedLocation.registerListener(this)
     }
 
     override fun onRequestPermissionsFailrule() {
-        val waarning = view?.findViewById<TextView>(R.id.TextView01)
-        DangerChanger.setToUnknown(waarning!!, activity!!)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -51,6 +69,7 @@ class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationCh
         viewModel.onStartDashboard()
         super.onRequestPermissions(activity?.baseContext!!, arrayOf(permission.ACCESS_COARSE_LOCATION, permission.ACCESS_FINE_LOCATION))
         super.onStart()
+        drawRisk()
     }
 
     override fun onDestroy() {
@@ -86,10 +105,12 @@ class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationCh
 
     override fun onLocationChanged(locationResult: LocationResult) {
         val location = locationResult.lastLocation
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
         val gcd = Geocoder(activity?.baseContext!!, Locale.getDefault())
         val addresses: List<Address> = gcd.getFromLocation(location.latitude, location.longitude, 1)
         val localizacao = addresses[0].adminArea
-        Log.i("Terrinha da Pessoa", localizacao)
+        val riskObtainer = RiskObtainer(localizacao)
+        riskObtainer.sortRiskStuff(waarning!!, activity!!)
     }
 
 }

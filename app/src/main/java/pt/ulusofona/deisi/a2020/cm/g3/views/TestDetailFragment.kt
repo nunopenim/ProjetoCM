@@ -1,5 +1,7 @@
 package pt.ulusofona.deisi.a2020.cm.g3.views
 
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,12 +10,18 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.location.LocationResult
 import pt.ulusofona.deisi.a2020.cm.g3.NavigationManager
 import pt.ulusofona.deisi.a2020.cm.g3.R
+import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.FusedLocation
+import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.OnLocationChangedListener
 import pt.ulusofona.deisi.a2020.cm.g3.extra.DangerChanger
+import pt.ulusofona.deisi.a2020.cm.g3.extra.GlobalRisk
+import pt.ulusofona.deisi.a2020.cm.g3.extra.RiskObtainer
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.TestDetailViewModel
+import java.util.*
 
-class TestDetailFragment(uuid: String) : Fragment() {
+class TestDetailFragment(uuid: String) : PermissionsFragment(100), OnLocationChangedListener {
 
     val uud = uuid
     private lateinit var viewModel: TestDetailViewModel
@@ -26,9 +34,8 @@ class TestDetailFragment(uuid: String) : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?){
-        val waarning = view?.findViewById<TextView>(R.id.TextView01)
-        DangerChanger.setToUnknown(waarning!!, activity!!)
         super.onActivityCreated(savedInstanceState)
+        drawRisk()
         val teste = viewModel.loadTeste(uud)
         val local_intent = teste.local
         val data_intent = teste.data
@@ -59,5 +66,41 @@ class TestDetailFragment(uuid: String) : Fragment() {
                 NavigationManager.photoViewer(activity!!.supportFragmentManager, viewModel)
             }
         }
+    }
+
+    fun drawRisk() {
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
+        if (GlobalRisk.risco == -1) {
+            DangerChanger.setToUnknown(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 0) {
+            DangerChanger.setToSafe(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 1) {
+            DangerChanger.setToModerate(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 2) {
+            DangerChanger.setToRisky(waarning!!, activity!!)
+        }
+        else if(GlobalRisk.risco == 3) {
+            DangerChanger.setToDangerous(waarning!!, activity!!)
+        }
+    }
+
+    override fun onLocationChanged(locationResult: LocationResult) {
+        val location = locationResult.lastLocation
+        val waarning = view?.findViewById<TextView>(R.id.TextView01)
+        val gcd = Geocoder(activity?.baseContext!!, Locale.getDefault())
+        val addresses: List<Address> = gcd.getFromLocation(location.latitude, location.longitude, 1)
+        val localizacao = addresses[0].adminArea
+        val riskObtainer = RiskObtainer(localizacao)
+        riskObtainer.sortRiskStuff(waarning!!, activity!!)
+    }
+
+    override fun onRequestPermissionsSuccess() {
+        FusedLocation.registerListener(this)
+    }
+
+    override fun onRequestPermissionsFailrule() {
     }
 }

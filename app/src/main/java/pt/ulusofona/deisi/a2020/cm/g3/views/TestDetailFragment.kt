@@ -85,6 +85,9 @@ class TestDetailFragment(uuid: String) : PermissionsFragment(100), OnLocationCha
         else if(GlobalRisk.risco == 3) {
             DangerChanger.setToDangerous(waarning!!, activity!!)
         }
+        else if(GlobalRisk.risco == -2) {
+            DangerChanger.setToNoConnection(waarning!!, activity!!)
+        }
     }
 
     override fun onLocationChanged(locationResult: LocationResult) {

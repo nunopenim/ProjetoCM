@@ -32,5 +32,10 @@ class DangerChanger {
             tview.setTextColor(Color.BLACK)
             tview.setBackgroundColor(Color.rgb(211, 211, 211))
         }
+        fun setToNoConnection(tview: TextView, activity: Activity) {
+            tview.text = activity.getString(R.string.no_internet)
+            tview.setTextColor(Color.BLACK)
+            tview.setBackgroundColor(Color.rgb(211, 211, 211))
+        }
     }
 }

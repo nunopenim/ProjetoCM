@@ -71,6 +71,9 @@ class ListaTestesFragment : PermissionsFragment(100), OnLocationChangedListener,
         else if(GlobalRisk.risco == 3) {
             DangerChanger.setToDangerous(waarning!!, activity!!)
         }
+        else if(GlobalRisk.risco == -2) {
+            DangerChanger.setToNoConnection(waarning!!, activity!!)
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

@@ -3,9 +3,11 @@ package pt.ulusofona.deisi.a2020.cm.g3.extra
 import android.app.Activity
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import pt.ulusofona.deisi.a2020.cm.g3.R
 import pt.ulusofona.deisi.a2020.cm.g3.data.remote.DataObtainer
 import java.lang.Exception
 
@@ -25,12 +27,15 @@ class RiskObtainer {
                     riskLevel = riskIO
                     hasRisk = true
                 } catch (e: Exception) {
-                    Log.i("RiskObtainer", "Father, I have failed you")
-                    hasRisk = true
+                    riskLevel = -2
+                    hasRisk = false
                 }
                 GlobalRisk.risco = riskLevel
                 CoroutineScope(Dispatchers.Main).launch {
-                    if (GlobalRisk.risco == -1 || !hasRisk) {
+                    if(!hasRisk || GlobalRisk.risco == -2) {
+                        DangerChanger.setToNoConnection(tview, activity)
+                    }
+                    else if (GlobalRisk.risco == -1) {
                         DangerChanger.setToUnknown(tview, activity)
                     }
                     else if(GlobalRisk.risco == 0) {

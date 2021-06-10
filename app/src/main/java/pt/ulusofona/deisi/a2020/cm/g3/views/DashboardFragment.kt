@@ -48,6 +48,9 @@ class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationCh
         else if(GlobalRisk.risco == 3) {
             DangerChanger.setToDangerous(waarning!!, activity!!)
         }
+        else if(GlobalRisk.risco == -2) {
+            DangerChanger.setToNoConnection(waarning!!, activity!!)
+        }
     }
 
     override fun onRequestPermissionsSuccess() {

@@ -93,8 +93,8 @@ class TestDetailFragment(uuid: String) : PermissionsFragment(100), OnLocationCha
         val gcd = Geocoder(activity?.baseContext!!, Locale.getDefault())
         val addresses: List<Address> = gcd.getFromLocation(location.latitude, location.longitude, 1)
         val localizacao = addresses[0].adminArea
-        val riskObtainer = RiskObtainer(localizacao)
-        riskObtainer.sortRiskStuff(waarning!!, activity!!)
+        RiskObtainer.distriot = localizacao
+        RiskObtainer.sortRiskStuff(waarning!!, activity!!)
     }
 
     override fun onRequestPermissionsSuccess() {

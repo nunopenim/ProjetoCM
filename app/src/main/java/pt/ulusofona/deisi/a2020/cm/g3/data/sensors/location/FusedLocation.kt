@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Looper
 import android.util.Log
@@ -11,6 +12,7 @@ class FusedLocation private constructor(context: Context) : LocationCallback() {
     private var locationRequest: LocationRequest? = null
     private var client = FusedLocationProviderClient(context)
 
+    @SuppressLint("MissingPermission")
     private fun startLocationUpdates() {
         client.requestLocationUpdates(locationRequest, this, Looper.myLooper())
     }

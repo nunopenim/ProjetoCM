@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
         Battery.start(this, this)
         FusedLocation.start(this)
         setContentView(R.layout.activity_main)
-        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT; // bloqueado na rotação because yes
+        //this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT; // bloqueado na rotação because yes
         NavigationManager.goToDashboard(supportFragmentManager)
         drawerLayout = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)

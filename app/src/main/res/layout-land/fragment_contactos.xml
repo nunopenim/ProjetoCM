@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.ContactosFragment">
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="3dp"
+
+        android:layout_marginTop="55dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="#D9001B"
+        android:text="@string/danger"
+        android:textAlignment="center"
+        android:textColor="#F6F6F6"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+        android:drawablePadding="8dp"
+        android:maxLines="1"
+        android:text="@string/phone_contacts"
+        android:textAlignment="textStart"
+        android:textColor="#4682B4"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:drawablePadding="55dp"
+        android:maxLines="1"
+        android:text="+351 808 24 24 24"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:drawablePadding="55dp"
+        android:text="@string/sns_line_symnptoms"
+        android:textAlignment="textStart"
+
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_view4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="55dp"
+        android:maxLines="1"
+        android:text="+351 300 502 502"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:drawablePadding="55dp"
+        android:text="@string/social_sec_line"
+        android:textAlignment="textStart"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_view6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="55dp"
+        android:maxLines="1"
+        android:text="+351 217929714 / +351 961706472"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:drawablePadding="55dp"
+        android:text="@string/consular_gab"
+        android:textAlignment="textStart"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_view8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawablePadding="10dp"
+        android:maxLines="1"
+        android:text="@string/digital_contacts"
+        android:textAlignment="textStart"
+        android:textColor="#4682B4"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:drawablePadding="55dp"
+        android:maxLines="1"
+        android:text="covid19.min-saude.pt"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:drawablePadding="55dp"
+        android:text="@string/dgs_plat"
+        android:textAlignment="textStart"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_view11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="55dp"
+        android:maxLines="1"
+        android:text="atendimento@SNS24.gov.pt"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:drawablePadding="55dp"
+        android:text="@string/dgs_channel"
+        android:textAlignment="textStart"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_view13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="55dp"
+        android:maxLines="1"
+        android:text="gec@mne.pt"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:drawablePadding="55dp"
+        android:text="@string/consular_gab"
+        android:textAlignment="textStart"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_view15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="55dp"
+        android:maxLines="1"
+        android:text="@string/covid_law"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:drawablePadding="55dp"
+        android:text="@string/replublics_diary"
+        android:textAlignment="textStart"
+        android:textSize="14sp" />
+</TableLayout>

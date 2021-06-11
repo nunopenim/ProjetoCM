@@ -103,10 +103,15 @@ class TestDetailFragment(uuid: String) : PermissionsFragment(100), OnLocationCha
         }
         catch (e: IOException) {
             GlobalRisk.risco = -1
-            DangerChanger.setToUnknown(waarning!!, activity!!)
+            try {
+                DangerChanger.setToUnknown(waarning!!, activity!!)
+            }
+            catch (e: NullPointerException) {
+                null
+            }
         }
         catch (e: NullPointerException) {
-            // AAAAAAAAAA
+            null
         }
     }
 

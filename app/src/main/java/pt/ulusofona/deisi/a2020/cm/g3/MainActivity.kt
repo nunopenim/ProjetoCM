@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
     }
 
     override fun onCurrentChanged (current: Float){
-        if(current < 20) {
+        if(current <= 20) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             val toast = Toast.makeText(this, getString(R.string.lowbat), Toast.LENGTH_LONG)
             toast.show()

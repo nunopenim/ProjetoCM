@@ -27,8 +27,14 @@ class RiskObtainer {
                     riskLevel = riskIO
                     hasRisk = true
                 } catch (e: Exception) {
-                    riskLevel = -2
-                    hasRisk = false
+                    if (e.message!!.contains("500")) {
+                        riskLevel = -1
+                        hasRisk = true
+                    }
+                    else {
+                        riskLevel = -2
+                        hasRisk = false
+                    }
                 }
                 GlobalRisk.risco = riskLevel
                 CoroutineScope(Dispatchers.Main).launch {

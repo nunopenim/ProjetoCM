@@ -62,4 +62,5 @@
 
     <string name="lowbat">Dark Mode aplicado! Bateria fraca!</string>
     <string name="no_internet">Sem Internet! Dados desatualizados</string>
+    <string name="camera_fail">Falha a abrir a câmera</string>
 </resources>

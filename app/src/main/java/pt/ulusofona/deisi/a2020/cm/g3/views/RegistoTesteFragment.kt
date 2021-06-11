@@ -125,7 +125,7 @@ class RegistoTesteFragment : PermissionsFragment(100), OnLocationChangedListener
                 startActivityForResult(photoIntent, REQUEST_CODE)
             }
             else {
-                Toast.makeText((activity), "AAAAA", Toast.LENGTH_LONG).show() // Aqui falhou a abrir a camera seja lá porque motivo, mudar o texto
+                Toast.makeText((activity), activity!!.getString(R.string.camera_fail), Toast.LENGTH_LONG).show() // Aqui falhou a abrir a camera seja lá porque motivo, mudar o texto
             }
         }
         saveButton.setOnClickListener {
@@ -153,7 +153,7 @@ class RegistoTesteFragment : PermissionsFragment(100), OnLocationChangedListener
                 viewModel.onClickSave(local.text.toString(), resultado, Date(date), photo)
 
                 activity!!.title = getString(R.string.Dashboard)
-                NavigationManager.goToDashboard(activity!!.supportFragmentManager)
+                NavigationManager.goToList(activity!!.supportFragmentManager)
             }
         }
     }

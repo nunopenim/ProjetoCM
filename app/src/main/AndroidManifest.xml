@@ -28,7 +28,9 @@
                 android:resource="@xml/fileprovider"/>
 
         </provider>
-        
+
+        <!-- Má prática bloquear a rotação, mas há pouco tempo para corrigir os bugs, infelizmente terá de ser assim... -->
+
         <activity android:name=".SplashScreenActivity" android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -118,5 +118,8 @@ class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationCh
             GlobalRisk.risco = -1
             DangerChanger.setToUnknown(waarning!!, activity!!)
         }
+        catch (e: NullPointerException) {
+            // AAAAAAAAAA
+        }
     }
 }

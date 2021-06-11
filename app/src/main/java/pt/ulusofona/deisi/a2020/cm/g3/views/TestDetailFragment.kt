@@ -105,6 +105,9 @@ class TestDetailFragment(uuid: String) : PermissionsFragment(100), OnLocationCha
             GlobalRisk.risco = -1
             DangerChanger.setToUnknown(waarning!!, activity!!)
         }
+        catch (e: NullPointerException) {
+            // AAAAAAAAAA
+        }
     }
 
     override fun onRequestPermissionsSuccess() {

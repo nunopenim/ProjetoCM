@@ -71,6 +71,9 @@ class RegistoTesteFragment : PermissionsFragment(100), OnLocationChangedListener
             GlobalRisk.risco = -1
             DangerChanger.setToUnknown(waarning!!, activity!!)
         }
+        catch (e: NullPointerException) {
+            // AAAAAAAAAA
+        }
     }
 
     override fun onRequestPermissionsSuccess() {

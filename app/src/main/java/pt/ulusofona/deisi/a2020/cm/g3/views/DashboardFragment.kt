@@ -1,7 +1,7 @@
 package pt.ulusofona.deisi.a2020.cm.g3.views
 
 import android.Manifest.permission
-import android.util.Log
+import android.content.Intent
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
@@ -12,9 +12,6 @@ import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import com.github.mikephil.charting.charts.BarChart
 import com.google.android.gms.location.LocationResult
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.a2020.cm.g3.R
 import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.FusedLocation
 import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.OnLocationChangedListener
@@ -115,5 +112,4 @@ class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationCh
         RiskObtainer.distriot = localizacao
         RiskObtainer.sortRiskStuff(waarning!!, activity!!)
     }
-
 }

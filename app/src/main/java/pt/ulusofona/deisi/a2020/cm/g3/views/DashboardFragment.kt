@@ -21,6 +21,7 @@ import pt.ulusofona.deisi.a2020.cm.g3.extra.GlobalRisk
 import pt.ulusofona.deisi.a2020.cm.g3.extra.RiskObtainer
 import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnDataRecieved
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.DashboardViewModel
+import java.io.IOException
 import java.util.*
 
 
@@ -107,9 +108,15 @@ class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationCh
         val location = locationResult.lastLocation
         val waarning = view?.findViewById<TextView>(R.id.TextView01)
         val gcd = Geocoder(activity?.baseContext!!, Locale.getDefault())
-        val addresses: List<Address> = gcd.getFromLocation(location.latitude, location.longitude, 1)
-        val localizacao = addresses[0].adminArea
-        RiskObtainer.distriot = localizacao
-        RiskObtainer.sortRiskStuff(waarning!!, activity!!)
+        try {
+            val addresses: List<Address> = gcd.getFromLocation(location.latitude, location.longitude, 1)
+            val localizacao = addresses[0].adminArea
+            RiskObtainer.distriot = localizacao
+            RiskObtainer.sortRiskStuff(waarning!!, activity!!)
+        }
+        catch (e: IOException) {
+            GlobalRisk.risco = -1
+            DangerChanger.setToUnknown(waarning!!, activity!!)
+        }
     }
 }

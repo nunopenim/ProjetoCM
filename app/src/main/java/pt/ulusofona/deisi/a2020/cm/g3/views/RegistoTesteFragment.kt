@@ -32,6 +32,7 @@ import pt.ulusofona.deisi.a2020.cm.g3.extra.GlobalRisk
 import pt.ulusofona.deisi.a2020.cm.g3.extra.RiskObtainer
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.RegistoTesteViewModel
 import java.io.File
+import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -60,10 +61,16 @@ class RegistoTesteFragment : PermissionsFragment(100), OnLocationChangedListener
         val location = locationResult.lastLocation
         val waarning = view?.findViewById<TextView>(R.id.TextView01)
         val gcd = Geocoder(activity?.baseContext!!, Locale.getDefault())
-        val addresses: List<Address> = gcd.getFromLocation(location.latitude, location.longitude, 1)
-        val localizacao = addresses[0].adminArea
-        RiskObtainer.distriot = localizacao
-        RiskObtainer.sortRiskStuff(waarning!!, activity!!)
+        try {
+            val addresses: List<Address> = gcd.getFromLocation(location.latitude, location.longitude, 1)
+            val localizacao = addresses[0].adminArea
+            RiskObtainer.distriot = localizacao
+            RiskObtainer.sortRiskStuff(waarning!!, activity!!)
+        }
+        catch (e: IOException) {
+            GlobalRisk.risco = -1
+            DangerChanger.setToUnknown(waarning!!, activity!!)
+        }
     }
 
     override fun onRequestPermissionsSuccess() {

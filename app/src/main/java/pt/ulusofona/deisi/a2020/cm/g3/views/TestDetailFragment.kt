@@ -34,6 +34,11 @@ class TestDetailFragment(uuid: String) : PermissionsFragment(100), OnLocationCha
         return view
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        viewModel = ViewModelProviders.of(this).get(TestDetailViewModel::class.java)
+        super.onCreate(savedInstanceState)
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?){
         super.onActivityCreated(savedInstanceState)
         drawRisk()

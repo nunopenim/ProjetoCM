@@ -96,11 +96,17 @@ class ListaTestesFragment : PermissionsFragment(100), OnLocationChangedListener,
         viewModel = ViewModelProviders.of(this).get(ListaTestesViewModel::class.java)
         viewModel.onLoadAdapter()
         crescente = view?.findViewById(R.id.crescente)!!
-        decrescente = view?.findViewById(R.id.decrescente)
-        rv = view?.findViewById(R.id.recycler_testes)
-        relative_rv = view?.findViewById(R.id.relative_recycler)
-        emptyList = view?.findViewById(R.id.emptyList)
+        decrescente = view?.findViewById(R.id.decrescente)!!
+        rv = view?.findViewById(R.id.recycler_testes)!!
+        relative_rv = view?.findViewById(R.id.relative_recycler)!!
+        emptyList = view?.findViewById(R.id.emptyList)!!
         return view
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        viewModel = ViewModelProviders.of(this).get(ListaTestesViewModel::class.java)
+        viewModel.onLoadAdapter()
+        super.onCreate(savedInstanceState)
     }
 
     override fun onStart() {

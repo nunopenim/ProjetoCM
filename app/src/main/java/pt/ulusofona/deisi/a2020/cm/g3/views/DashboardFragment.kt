@@ -64,6 +64,11 @@ class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationCh
         return view
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        viewModel = ViewModelProviders.of(this).get(DashboardViewModel::class.java)
+        super.onCreate(savedInstanceState)
+    }
+
     override fun onStart() {
         viewModel.registerListener(this)
         viewModel.onLoad()
@@ -74,8 +79,8 @@ class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationCh
     }
 
     override fun onDestroy() {
-        viewModel.unregisterListener()
         viewModel.onUnload()
+        viewModel.unregisterListener()
         FusedLocation.unregisterListener()
         super.onDestroy()
     }

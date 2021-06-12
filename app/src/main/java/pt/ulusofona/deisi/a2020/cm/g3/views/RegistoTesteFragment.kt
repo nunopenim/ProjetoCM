@@ -94,6 +94,11 @@ class RegistoTesteFragment : PermissionsFragment(100), OnLocationChangedListener
         return view
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        viewModel = ViewModelProviders.of(this).get(RegistoTesteViewModel::class.java)
+        super.onCreate(savedInstanceState)
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         drawRisk()

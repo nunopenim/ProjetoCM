@@ -33,6 +33,11 @@ class VacinacaoFragment : PermissionsFragment(100), OnLocationChangedListener, O
         return view
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        viewModel = ViewModelProviders.of(this).get(VacinacaoViewModel::class.java)
+        super.onCreate(savedInstanceState)
+    }
+
     override fun onStart() {
         viewModel.registerListener(this)
         viewModel.onLoad()

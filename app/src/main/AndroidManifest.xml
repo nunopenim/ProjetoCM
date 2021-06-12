@@ -29,16 +29,14 @@
 
         </provider>
 
-        <!-- Má prática bloquear a rotação, mas há pouco tempo para corrigir os bugs, infelizmente terá de ser assim... -->
-
-        <activity android:name=".SplashScreenActivity" android:screenOrientation="portrait" >
+        <activity android:name=".SplashScreenActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

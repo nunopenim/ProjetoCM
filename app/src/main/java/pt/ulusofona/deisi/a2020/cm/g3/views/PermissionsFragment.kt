@@ -24,6 +24,7 @@ abstract class PermissionsFragment (private val requestCode: Int): Fragment() {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         if(this.requestCode == requestCode) {
             if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                activity!!.recreate() // Unica maneira de não dar reboot
                 onRequestPermissionsSuccess()
             }
             else {

@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -32,7 +33,9 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
         FusedLocation.start(this)
         setContentView(R.layout.activity_main)
         //this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT; // bloqueado na rotação because yes
-        NavigationManager.goToDashboard(supportFragmentManager)
+        if(supportFragmentManager.backStackEntryCount == 0) {
+            NavigationManager.goToDashboard(supportFragmentManager)
+        }
         drawerLayout = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
         toolbar = findViewById(R.id.toolbar)

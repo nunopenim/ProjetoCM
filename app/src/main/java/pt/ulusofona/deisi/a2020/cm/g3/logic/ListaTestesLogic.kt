@@ -36,8 +36,10 @@ class ListaTestesLogic(private val storage: TestDao) {
                 lista.add(i.convertToTeste())
             }
             testList = lista
-            adapter = TesteAdapter(testList)
-            notifyOnListLoaded()
+            CoroutineScope(Dispatchers.Main).launch {
+                adapter = TesteAdapter(testList)
+                notifyOnListLoaded()
+            }
         }
         /*CoroutineScope(Dispatchers.IO).launch {
             testList = ArrayList()

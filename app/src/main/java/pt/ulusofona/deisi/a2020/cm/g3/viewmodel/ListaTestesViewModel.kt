@@ -56,9 +56,7 @@ class ListaTestesViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     override fun onLoadTestsList(list: TesteAdapter) {
-        CoroutineScope(Dispatchers.Main).launch {
-            adapter = list
-            notifyOnTestListUpdated()
-        }
+        adapter = list
+        notifyOnTestListUpdated()
     }
 }

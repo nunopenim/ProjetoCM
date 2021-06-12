@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
     lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
     lateinit var toolbar: Toolbar
+    var shownMessage = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,8 +96,11 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
     override fun onCurrentChanged (current: Float){
         if(current <= 20) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            val toast = Toast.makeText(this, getString(R.string.lowbat), Toast.LENGTH_LONG)
-            toast.show()
+            if (!shownMessage) {
+                val toast = Toast.makeText(this, getString(R.string.lowbat), Toast.LENGTH_LONG)
+                toast.show()
+                shownMessage = true
+            }
         }
     }
 }

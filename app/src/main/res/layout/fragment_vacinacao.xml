@@ -48,7 +48,6 @@
                     android:layout_width="96dp"
                     android:layout_height="104dp"
                     android:src="@drawable/vacina" />
-
                 <TextView
                     android:id="@+id/confirmados"
                     android:layout_width="wrap_content"

@@ -1,13 +1,10 @@
 package pt.ulusofona.deisi.a2020.cm.g3.extra
 
 import android.app.Activity
-import android.util.Log
 import android.widget.TextView
-import android.widget.Toast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import pt.ulusofona.deisi.a2020.cm.g3.R
 import pt.ulusofona.deisi.a2020.cm.g3.data.remote.DataObtainer
 import java.lang.Exception
 

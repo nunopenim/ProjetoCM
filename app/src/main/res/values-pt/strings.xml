@@ -11,10 +11,10 @@
     <string name="extra_info">Outras Informações</string>
     <string name="add_test">Registo de testes</string>
 
-    <string name="danger">A zona onde está é perigosa</string>
-    <string name="risky">A zona onde está é insegura</string>
-    <string name="moderate">A zona onde está é moderadamente segura</string>
-    <string name="safe">A zona onde está é segura</string>
+    <string name="danger">A zona onde está é extremamente perigosa</string>
+    <string name="risky">A zona onde está é muito perigosa</string>
+    <string name="moderate">A zona onde está é perigosa</string>
+    <string name="safe">A zona onde está é moderada</string>
     <string name="unknown">Zona desconhecida!</string>
 
     <string name="phone_contacts">Contactos telefónicos COVID19 </string>

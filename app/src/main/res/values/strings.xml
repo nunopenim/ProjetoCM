@@ -10,10 +10,10 @@
     <string name="extra_info">Other informations</string>
     <string name="add_test">Test register</string>
     
-    <string name="danger">The area you are in is dangerous</string>
-    <string name="risky">The area you are in is risky</string>
-    <string name="moderate">The area you are in is moderate</string>
-    <string name="safe">The area you are in is safe</string>
+    <string name="danger">The area you are in is extremely dangerous</string>
+    <string name="risky">The area you are in is very dangerous</string>
+    <string name="moderate">The area you are in is dangerous</string>
+    <string name="safe">The area you are in is moderate</string>
     <string name="unknown">Unknown area!</string>
     
     <string name="phone_contacts">Telephonic contacts COVID 19 </string>

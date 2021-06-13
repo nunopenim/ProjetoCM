@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.location.Address
@@ -126,6 +127,9 @@ class RegistoTesteFragment : PermissionsFragment(100), OnLocationChangedListener
             photoIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileprovider)
 
             if (photoIntent.resolveActivity(activity!!.packageManager) != null) {
+                startActivityForResult(photoIntent, REQUEST_CODE)
+            }
+            else if (context!!.packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY)) {
                 startActivityForResult(photoIntent, REQUEST_CODE)
             }
             else {

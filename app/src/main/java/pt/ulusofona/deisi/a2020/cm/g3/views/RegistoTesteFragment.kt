@@ -99,8 +99,8 @@ class RegistoTesteFragment : PermissionsFragment(100), OnLocationChangedListener
         super.onCreate(savedInstanceState)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onStart() {
+        super.onStart()
         drawRisk()
         val local: TextView = view!!.findViewById(R.id.local)
         val dataTeste: TextView = view!!.findViewById(R.id.data)

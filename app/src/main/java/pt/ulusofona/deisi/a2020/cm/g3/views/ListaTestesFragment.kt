@@ -3,7 +3,6 @@ package pt.ulusofona.deisi.a2020.cm.g3.views
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

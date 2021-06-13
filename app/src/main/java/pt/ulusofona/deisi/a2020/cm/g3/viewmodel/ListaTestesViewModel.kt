@@ -1,11 +1,7 @@
 package pt.ulusofona.deisi.a2020.cm.g3.viewmodel
 
-import android.util.Log
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.a2020.cm.g3.extra.TesteAdapter
 import pt.ulusofona.deisi.a2020.cm.g3.extra.Teste
 import pt.ulusofona.deisi.a2020.cm.g3.data.TestsDatabase

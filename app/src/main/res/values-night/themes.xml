@@ -21,7 +21,7 @@
         <item name="android:background">@color/black</item>
     </style>
     <style name="Theme.Bar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:background">#DF5A5A5A</item>
+        <item name="android:background">#DF7E7979</item>
     </style>
 
 </resources>

@@ -20,13 +20,13 @@
         android:textAlignment="center"
         android:textSize="18sp" />
 
-    <GridLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alignmentMode="alignMargins"
-        android:columnCount="1"
+        android:columnCount="2"
         android:columnOrderPreserved="false"
-        android:rowCount="2">
+        android:rowCount="1">
 
         <androidx.cardview.widget.CardView
             app:cardCornerRadius="12dp"
@@ -39,20 +39,20 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="156dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="53dp"
+                    android:layout_height="47dp"
                     android:src="@drawable/vacina" />
 
                 <TextView
                     android:id="@+id/confirmados"
                     android:layout_width="wrap_content"
-                    android:layout_height="37dp"
+                    android:layout_height="52dp"
                     android:layout_marginTop="12dp"
                     android:maxLines="2"
                     android:text="@string/totalvacinas"
@@ -61,13 +61,15 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-    </GridLayout>
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="429dp"
+            android:layout_height="281dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp" />
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieChart"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp" />
+    </LinearLayout>
+
+
 </TableLayout>

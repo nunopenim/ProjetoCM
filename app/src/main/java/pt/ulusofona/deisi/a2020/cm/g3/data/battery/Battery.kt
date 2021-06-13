@@ -3,11 +3,8 @@ package pt.ulusofona.deisi.a2020.cm.g3.data.battery
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.content.res.Configuration
 import android.os.BatteryManager
 import android.os.Handler
-import android.util.Log
-import androidx.appcompat.app.AppCompatDelegate
 
 class Battery private constructor(private val context: Context) : Runnable{
 

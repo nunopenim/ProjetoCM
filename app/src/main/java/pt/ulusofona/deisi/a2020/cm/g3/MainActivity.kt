@@ -1,10 +1,7 @@
 package pt.ulusofona.deisi.a2020.cm.g3
 
-import android.content.pm.ActivityInfo
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -13,12 +10,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.a2020.cm.g3.data.battery.Battery
 import pt.ulusofona.deisi.a2020.cm.g3.data.battery.OnBatteryCurrentListener
-import pt.ulusofona.deisi.a2020.cm.g3.data.remote.DataObtainer
 import pt.ulusofona.deisi.a2020.cm.g3.data.sensors.location.FusedLocation
 
 class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelectedListener, OnBatteryCurrentListener {

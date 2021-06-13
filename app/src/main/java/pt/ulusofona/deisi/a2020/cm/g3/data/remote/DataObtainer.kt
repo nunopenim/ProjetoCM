@@ -1,6 +1,5 @@
 package pt.ulusofona.deisi.a2020.cm.g3.data.remote
 
-import android.util.Log
 import pt.ulusofona.deisi.a2020.cm.g3.extra.Data
 import pt.ulusofona.deisi.a2020.cm.g3.extra.Vacinas
 import pt.ulusofona.deisi.a2020.cm.g3.extra.SysTools

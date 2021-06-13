@@ -1,7 +1,6 @@
 package pt.ulusofona.deisi.a2020.cm.g3.views
 
 import android.Manifest.permission
-import android.content.Intent
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
@@ -23,7 +22,6 @@ import pt.ulusofona.deisi.a2020.cm.g3.interfaces.OnDataRecieved
 import pt.ulusofona.deisi.a2020.cm.g3.viewmodel.DashboardViewModel
 import java.io.IOException
 import java.util.*
-
 
 class DashboardFragment : PermissionsFragment(100), OnDataRecieved, OnLocationChangedListener {
 

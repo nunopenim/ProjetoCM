@@ -1,3 +1,5 @@
+# App for Covid-19 stats monitoring in Portugal
+
 # Projeto CM - Grupo 3
 Nuno Penim - 21700874
 Marcella Melo - 21800043
